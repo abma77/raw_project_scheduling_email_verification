@@ -23,6 +23,7 @@ function legal_input($value)
     $value = trim($value);
     $value = stripslashes($value);
     $value = htmlspecialchars($value);
+    $value = strip_tags($value);
     return $value;
 }
 function get_domain($email)
@@ -44,9 +45,9 @@ if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
         $student_id_number_final = "";
         if ($_POST["middlename"] == null) {
-            $student_fullname = $_POST["lastname"] . ", " . ($_POST["firstname"]);
+            $student_fullname = strip_tags($_POST["lastname"]) . ", " . strip_tags(($_POST["firstname"]));
         } else {
-            $student_fullname = $_POST["lastname"] . ", " . ($_POST["firstname"] . " " . ($_POST["middlename"]));
+            $student_fullname = strip_tags($_POST["lastname"]) . ", " . strip_tags($_POST["firstname"]) . " " . strip_tags($_POST["middlename"]);
         }
         $random = rand(100000, 999999);
         $code = md5($random);

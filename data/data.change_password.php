@@ -10,8 +10,8 @@ if (isset($_GET['reset'])) {
                 $update_password = $conn->prepare("UPDATE users SET user_password =?, user_email_verified='' WHERE user_email_verified =?");
                 $update_password->execute(
                     [
-                        $_POST['password'],
-                        $_GET['reset']
+                        strip_tags($_POST['password']),
+                        strip_tags($_GET['reset'])
                     ]
                 );
                 if ($update_password) {

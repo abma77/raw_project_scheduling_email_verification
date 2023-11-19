@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
                 ON users.user_fullname = student_fullname
                 WHERE student_fullname = ?
         ");
-        $retrieve_student_section->execute([$_SESSION["user_fullname"]]);
+        $retrieve_student_section->execute([strip_tags($_SESSION["user_fullname"])]);
 
         while ($row = $retrieve_student_section->fetch()) {
             $student_section = $row["student_section"];
@@ -35,8 +35,8 @@ if (isset($_POST["submit"])) {
             ");
         $retrieve_student_schedule->execute([
 
-            $_POST["semester"],
-            $_POST["school_year"],
+            strip_tags($_POST["semester"]),
+            strip_tags($_POST["school_year"]),
             $student_section
         ]);
 

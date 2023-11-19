@@ -36,10 +36,10 @@
                 $schedule_end_time,
                 $schedule_start_time,
               
-                $_POST["plot_semester"],
-                $_POST["plot_school_year"],
-                $_POST["plot_section"],
-                $_POST["plot_week_day"]
+                strip_tags($_POST["plot_semester"]),
+                strip_tags($_POST["plot_school_year"]),
+                strip_tags($_POST["plot_section"]),
+                strip_tags($_POST["plot_week_day"])
             ]);
 
             // CHECK TEACHER SCHEDULE
@@ -52,10 +52,10 @@
                 $schedule_end_time,
                 $schedule_start_time,
                
-                $_POST["plot_semester"],
-                $_POST["plot_school_year"],
-                $_POST["plot_teacher"],
-                $_POST["plot_week_day"]
+                strip_tags($_POST["plot_semester"]),
+                strip_tags($_POST["plot_school_year"]),
+                strip_tags($_POST["plot_teacher"]),
+                strip_tags($_POST["plot_week_day"])
             ]);
 
             // CHECK ROOM SCHEDULE
@@ -68,10 +68,10 @@
                 $schedule_end_time,
                 $schedule_start_time,
                
-                $_POST["plot_semester"],
-                $_POST["plot_school_year"],
-                $_POST["plot_room"],
-                $_POST["plot_week_day"]
+                strip_tags($_POST["plot_semester"]),
+                strip_tags($_POST["plot_school_year"]),
+                strip_tags($_POST["plot_room"]),
+                strip_tags($_POST["plot_week_day"])
             ]);
 
             if($section_row = $check_section_time->fetch()){
@@ -90,16 +90,16 @@
                 ");
                 $added = $insert_section_schedule->execute([
                     
-                    $_POST["plot_semester"],
-                    $_POST["plot_school_year"],
-                    $_POST["plot_room"],
-                    $_POST["plot_section"],
-                    $_POST["plot_week_day"],
-                    $_POST["plot_teacher"],
-                    $_POST["plot_subject"],
-                    $schedule_start_time,
-                    $schedule_end_time,
-                    $rowspan
+                    strip_tags($_POST["plot_semester"]),
+                    strip_tags($_POST["plot_school_year"]),
+                    strip_tags($_POST["plot_room"]),
+                    strip_tags($_POST["plot_section"]),
+                    strip_tags($_POST["plot_week_day"]),
+                    strip_tags($_POST["plot_teacher"]),
+                    strip_tags($_POST["plot_subject"]),
+                    strip_tags($schedule_start_time),
+                    strip_tags($schedule_end_time),
+                    strip_tags($rowspan)
                 ]);
 
                 if($added){

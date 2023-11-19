@@ -11,8 +11,8 @@ if (isset($_POST["submit"])) {
                 WHERE section_name = ? AND section_program = ?
             ");
         $check_section->execute([
-            $_POST["section_name"],
-            $_POST["section_program"]
+            strip_tags($_POST["section_name"]),
+            strip_tags($_POST["section_program"])
         ]);
 
         if ($check_section->fetch()) {
@@ -26,9 +26,9 @@ if (isset($_POST["submit"])) {
                     (?,?,?)
                 ");
             $inserted = $insert_section->execute([
-                $_POST["section_name"],
-                $_POST["section_program"],
-                $_POST["section_major"]
+                strip_tags($_POST["section_name"]),
+                strip_tags($_POST["section_program"]),
+                strip_tags($_POST["section_major"])
             ]);
 
             if ($inserted) {

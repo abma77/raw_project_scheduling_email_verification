@@ -17,14 +17,14 @@ if (isset($_POST["submit"])) {
             FROM users
             WHERE user_email = ?");
         $check_email->execute([
-            $_POST["email"]
+            strip_tags($_POST["email"])
         ]);
 
         if ($check_email->fetch()) {
             $update_code = $conn->prepare("UPDATE users SET user_email_verified =? WHERE user_email=?");
             $update_code->execute([
                 $code,
-                $_POST["email"]
+                strip_tags($_POST["email"])
             ]);
             if ($update_code) {
                 $mail = new PHPMailer(true);

@@ -4,7 +4,7 @@ include_once("database.php");
 
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
-        $like = "%" . $_POST["course"] . " " . $_POST["year"] . "%";
+        $like = "%" . strip_tags($_POST["course"]) . " " . strip_tags($_POST["year"]) . "%";
         $retrieve_section_for_plot = $conn->prepare("
                 SELECT *
                 FROM section_detail
@@ -14,8 +14,8 @@ if (isset($_POST["submit"])) {
                 ORDER BY section_name ASC;
             ");
         $retrieve_section_for_plot->execute([
-            $_POST["semester"],
-            $_POST["school_year"],
+            strip_tags($_POST["semester"]),
+            strip_tags($_POST["school_year"]),
             $like
         ]);
 

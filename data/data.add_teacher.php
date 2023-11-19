@@ -2,9 +2,16 @@
 // DATABASE CONNECTION
 include_once("database.php");
 $_POST["lastname"] . ", " . legal_input($_POST["firstname"]);
+function legal_input($value)
+{
+    $value = trim($value);
+    $value = stripslashes($value);
+    $value = htmlspecialchars($value);
+    return $value;
+}
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
-        $teacher_fullname = $_POST["lastname"] . ", " . $_POST["firstname"];
+        $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"]));
         // CHECK ID NUMBER
         $check_id_number = $conn->prepare("
                 SELECT teacher_id_number
@@ -12,7 +19,7 @@ if (isset($_POST["submit"])) {
                 WHERE teacher_id_number = ?
             ");
         $check_id_number->execute([
-            $_POST["id_number"]
+            strip_tags($_POST["id_number"])
         ]);
 
         if ($check_id_number->fetch()) {
@@ -25,22 +32,22 @@ if (isset($_POST["submit"])) {
                     (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                 ");
             $teacher_added = $insert_teacher->execute([
-                $_POST["id_number"],
-                $_POST["firstname"],
-                $_POST["lastname"],
-                $_POST["middlename"],
-                $_POST["bachelor"],
-                $_POST["master"],
-                $_POST["doctor"],
-                $_POST["special"],
-                $_POST["major"],
-                $_POST["minor"],
-                $_POST["designation"],
-                $_POST["status"],
-                $_POST["research"],
-                $_POST["production"],
-                $_POST["extension"],
-                $_POST["others"]
+                strip_tags($_POST["id_number"]),
+                strip_tags($_POST["firstname"]),
+                strip_tags($_POST["lastname"]),
+                strip_tags($_POST["middlename"]),
+                strip_tags($_POST["bachelor"]),
+                strip_tags($_POST["master"]),
+                strip_tags($_POST["doctor"]),
+                strip_tags($_POST["special"]),
+                strip_tags($_POST["major"]),
+                strip_tags($_POST["minor"]),
+                strip_tags($_POST["designation"]),
+                strip_tags($_POST["status"]),
+                strip_tags($_POST["research"]),
+                strip_tags($_POST["production"]),
+                strip_tags($_POST["extension"]),
+                strip_tags($_POST["others"])
             ]);
 
             if ($teacher_added) {
@@ -55,13 +62,13 @@ if (isset($_POST["submit"])) {
                 (?,?,?,?,?,?,?)
             ");
             $teacher_user_added = $insert_teacher_user->execute([
-                $_POST["username"],
-                $_POST["password"],
+                strip_tags($_POST["username"]),
+                strip_tags($_POST["password"]),
                 $teacher_fullname,
-                $_POST["phone_number"],
+                strip_tags($_POST["phone_number"]),
                 "Teacher",
-                $_POST["address"],
-                $_POST["id_number"],
+                strip_tags($_POST["address"]),
+                strip_tags($_POST["id_number"]),
 
             ]);
 

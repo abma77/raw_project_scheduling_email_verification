@@ -32,7 +32,7 @@ function get_domain($email)
 }
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
-        $teacher_fullname = $_POST["lastname"] . ", " . legal_input($_POST["firstname"]);
+        $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"]));
         $random = rand(100000, 999999);
         $code = md5($random);
 
@@ -44,9 +44,9 @@ if (isset($_POST["submit"])) {
             SELECT * FROM users WHERE user_username =? OR user_email =? OR user_id_number=? OR user_fullname =?
         ");
         $check_username->execute([
-            $_POST["username"],
-            $_POST["email"],
-            $_POST["ctuid"],
+            strip_tags($_POST["username"]),
+            strip_tags($_POST["email"]),
+            strip_tags($_POST["ctuid"]),
             $teacher_fullname
         ]);
 
@@ -68,15 +68,15 @@ if (isset($_POST["submit"])) {
                     (?,?,?,?,?,?,?,?,?)
                 ");
             $teacher_user_added = $insert_teacher_user->execute([
-                $_POST["username"],
-                $_POST["password"],
+                strip_tags($_POST["username"]),
+                strip_tags($_POST["password"]),
                 $teacher_fullname,
-                $_POST["phone_number"],
-                $_POST["email"],
-                $code,
+                strip_tags($_POST["phone_number"]),
+                strip_tags($_POST["email"]),
+                strip_tags($code),
                 "Teacher",
-                $_POST["address"],
-                $_POST["ctuid"]
+                strip_tags($_POST["address"]),
+                strip_tags($_POST["ctuid"])
             ]);
             //Create an instance; passing `true` enables exceptions
             $mail = new PHPMailer(true);
@@ -120,7 +120,7 @@ if (isset($_POST["submit"])) {
                 WHERE teacher_id_number = ?
             ");
             $check_id_number->execute([
-                $_POST["ctuid"]
+                strip_tags($_POST["ctuid"])
             ]);
 
             if ($check_id_number->fetch()) {
@@ -133,22 +133,22 @@ if (isset($_POST["submit"])) {
                 (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                 ");
                 $teacher_added = $insert_teacher->execute([
-                    $_POST["ctuid"],
-                    $_POST["firstname"],
-                    $_POST["lastname"],
-                    $_POST["middlename"],
-                    $_POST["bachelor"],
-                    $_POST["master"],
-                    $_POST["doctor"],
-                    $_POST["special"],
-                    $_POST["major"],
-                    $_POST["minor"],
-                    $_POST["designation"],
-                    $_POST["status"],
-                    $_POST["research"],
-                    $_POST["production"],
-                    $_POST["extension"],
-                    $_POST["others"]
+                    strip_tags($_POST["ctuid"]),
+                    strip_tags($_POST["firstname"]),
+                    strip_tags($_POST["lastname"]),
+                    strip_tags($_POST["middlename"]),
+                    strip_tags($_POST["bachelor"]),
+                    strip_tags($_POST["master"]),
+                    strip_tags($_POST["doctor"]),
+                    strip_tags($_POST["special"]),
+                    strip_tags($_POST["major"]),
+                    strip_tags($_POST["minor"]),
+                    strip_tags($_POST["designation"]),
+                    strip_tags($_POST["status"]),
+                    strip_tags($_POST["research"]),
+                    strip_tags($_POST["production"]),
+                    strip_tags($_POST["extension"]),
+                    strip_tags($_POST["others"])
                 ]);
 
                 if ($teacher_added) {

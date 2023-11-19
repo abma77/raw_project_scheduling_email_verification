@@ -11,7 +11,7 @@ if (isset($_POST["submit"])) {
                 WHERE room_name = ?
             ");
         $check_room->execute([
-            $_POST["room_name"],
+            strip_tags($_POST["room_name"]),
         ]);
 
         if ($check_room->fetch()) {
@@ -26,10 +26,10 @@ if (isset($_POST["submit"])) {
                 ");
             $added = $insert_room->execute([
 
-                $_POST["room_name"],
-                $_POST["room_building"],
-                $_POST["room_capacity"],
-                $_POST["room_type"]
+                strip_tags($_POST["room_name"]),
+                strip_tags($_POST["room_building"]),
+                strip_tags($_POST["room_capacity"]),
+                strip_tags($_POST["room_type"])
             ]);
 
             if ($added) {

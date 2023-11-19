@@ -42,9 +42,9 @@ $teacher_fullname = "";
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
         if ($_POST["middlename"] == null) {
-            $teacher_fullname = $_POST["lastname"] . ", " . ($_POST["firstname"]);
+            $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags((legal_input($_POST["firstname"])));
         } else {
-            $teacher_fullname = $_POST["lastname"] . ", " . ($_POST["firstname"] . " " . ($_POST["middlename"]));
+            $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"])) . " " . strip_tags(legal_input($_POST["middlename"]));
         }
         $random = rand(100000, 999999);
         $code = md5($random);
@@ -57,10 +57,10 @@ if (isset($_POST["submit"])) {
             SELECT * FROM users WHERE user_username =? OR user_email =? OR user_id_number=? OR user_fullname =?
         ");
         $check_username->execute([
-            $_POST["username"],
-            $_POST["email"],
-            $_POST["ctuid"],
-            $teacher_fullname
+            strip_tags($_POST["username"]),
+            strip_tags($_POST["email"]),
+            strip_tags($_POST["ctuid"]),
+            strip_tags($teacher_fullname)
         ]);
 
         // if ($check_username->fetch()) {
@@ -77,7 +77,7 @@ if (isset($_POST["submit"])) {
         // } 
         else {
             $check_user_id = $conn->prepare("SELECT user_id FROM users WHERE user_fullname =?");
-            $check_user_id->execute([$_SESSION["user_fullname"]]);
+            $check_user_id->execute([strip_tags($_SESSION["user_fullname"])]);
             if ($row = $check_user_id->fetch()) {
                 $user_id_final = $row["user_id"];
             }
@@ -87,13 +87,13 @@ if (isset($_POST["submit"])) {
                     WHERE user_id=?
                 ");
             $teacher_user_updated = $update_teacher_user->execute([
-                $_POST["password"],
-                $teacher_fullname,
-                $_POST["phone_number"],
-                "Teacher",
-                $_POST["address"],
-                $_POST["ctuid"],
-                $user_id_final
+                strip_tags($_POST["password"]),
+                strip_tags($teacher_fullname),
+                strip_tags($_POST["phone_number"]),
+                strip_tags("Teacher"),
+                strip_tags($_POST["address"]),
+                strip_tags($_POST["ctuid"]),
+                strip_tags($user_id_final)
             ]);
 
             //Create an instance; passing `true` enables exceptions
@@ -146,7 +146,7 @@ if (isset($_POST["submit"])) {
             // } else {
 
             $check_teacher_id_number = $conn->prepare("SELECT teacher_id_number FROM teacher WHERE teacher_fullname =?");
-            $check_teacher_id_number->execute([$_SESSION["user_fullname"]]);
+            $check_teacher_id_number->execute([strip_tags($_SESSION["user_fullname"])]);
             if ($row = $check_teacher_id_number->fetch()) {
                 $teacher_id_number_final = $row["teacher_id_number"];
             }
@@ -172,23 +172,23 @@ if (isset($_POST["submit"])) {
     ");
 
             $teacher_updated = $update_teacher->execute([
-                $_POST["firstname"],
-                $_POST["lastname"],
-                $_POST["middlename"],
-                $teacher_fullname,
-                $_POST["bachelor"],
-                $_POST["master"],
-                $_POST["doctor"],
-                $_POST["special"],
-                $_POST["major"],
-                $_POST["minor"],
-                $_POST["designation"],
-                $_POST["status"],
-                $_POST["research"],
-                $_POST["production"],
-                $_POST["extension"],
-                $_POST["others"],
-                $teacher_id_number_final
+                strip_tags($_POST["firstname"]),
+                strip_tags($_POST["lastname"]),
+                strip_tags($_POST["middlename"]),
+                strip_tags($teacher_fullname),
+                strip_tags($_POST["bachelor"]),
+                strip_tags($_POST["master"]),
+                strip_tags($_POST["doctor"]),
+                strip_tags($_POST["special"]),
+                strip_tags($_POST["major"]),
+                strip_tags($_POST["minor"]),
+                strip_tags($_POST["designation"]),
+                strip_tags($_POST["status"]),
+                strip_tags($_POST["research"]),
+                strip_tags($_POST["production"]),
+                strip_tags($_POST["extension"]),
+                strip_tags($_POST["others"]),
+                strip_tags($teacher_id_number_final)
             ]);
 
             if ($teacher_updated) {

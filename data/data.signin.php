@@ -16,7 +16,7 @@ if (isset($_POST["form_login"])) {
                 WHERE user_username = ?
             ");
         $check_login->execute([
-            $_POST['username'],
+            strip_tags($_POST['username']),
         ]);
 
         if ($row = $check_login->fetch()) {

@@ -16,9 +16,9 @@
             ");
             $retrieve_section_schedule->execute([
                
-                $_POST["semester"],
-                $_POST["school_year"],
-                $_POST["section"]
+                strip_tags($_POST["semester"]),
+                strip_tags($_POST["school_year"]),
+                strip_tags($_POST["section"])
             ]);
 
             while($row = $retrieve_section_schedule->fetch()){
@@ -69,8 +69,8 @@
     <tbody>
         <?php
             foreach($times as $i=>$time){ ?>
-                <tr class="text-center">
-                    <?php
+        <tr class="text-center">
+            <?php
                         if($i % 2 == 0){
                             echo "
                                 <th rowspan='2' style='font-size: 9px;'>".$time_proper[$i]."-".$time_proper[$i+2]."</th>
@@ -102,9 +102,9 @@
                             }
                         }
                     ?>
-                    
-                </tr>
-            <?php }
+
+        </tr>
+        <?php }
         ?>
     </tbody>
 </table>

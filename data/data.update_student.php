@@ -45,9 +45,9 @@ if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
         $student_id_number_final = "";
         if ($_POST["middlename"] == null) {
-            $student_fullname = strip_tags($_POST["lastname"]) . ", " . strip_tags(($_POST["firstname"]));
+            $student_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"]));
         } else {
-            $student_fullname = strip_tags($_POST["lastname"]) . ", " . strip_tags($_POST["firstname"]) . " " . strip_tags($_POST["middlename"]);
+            $student_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"])) . " " . strip_tags(legal_input($_POST["middlename"]));
         }
         $random = rand(100000, 999999);
         $code = md5($random);
@@ -77,7 +77,7 @@ if (isset($_POST["submit"])) {
         // } 
         else {
             $check_user_id = $conn->prepare("SELECT user_id FROM users WHERE user_fullname =?");
-            $check_user_id->execute([$_SESSION["user_fullname"]]);
+            $check_user_id->execute([strip_tags($_SESSION["user_fullname"])]);
             if ($row = $check_user_id->fetch()) {
                 $user_id_final = $row["user_id"];
             }
@@ -93,13 +93,13 @@ if (isset($_POST["submit"])) {
                 user_id_number = ?
                 WHERE user_id = ?");
             $student_user_updated = $update_student_user->execute([
-                $_POST["password"],
-                $student_fullname,
-                $_POST["phone_number"],
-                "Student",
-                $_POST["address"],
-                $_POST["ctuid"],
-                $user_id_final
+                strip_tags($_POST["password"]),
+                strip_tags($student_fullname),
+                strip_tags($_POST["phone_number"]),
+                strip_tags("Student"),
+                strip_tags($_POST["address"]),
+                strip_tags($_POST["ctuid"]),
+                strip_tags($user_id_final)
             ]);
             //Create an instance; passing `true` enables exceptions
             // $mail = new PHPMailer(true);

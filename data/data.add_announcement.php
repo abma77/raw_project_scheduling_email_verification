@@ -1,8 +1,8 @@
-<?php 
+<?php
 include_once("database.php");
 
-if(isset($_POST["submit"])){
-    if(!empty($_POST["submit"])){
+if (isset($_POST["submit"])) {
+    if (!empty($_POST["submit"])) {
         $check_announcement = $conn->prepare("
             SELECT *
             FROM announcement
@@ -11,17 +11,16 @@ if(isset($_POST["submit"])){
             AND announcement_end_date = ? 
         ");
         $check_announcement->execute([
-            $_POST["announcement_title"],
-            $_POST["announcement_desc"],
-            $_POST["announcement_type"],
-            $_POST["announcement_start_date"],
-            $_POST["announcement_end_date"],
+            strip_tags($_POST["announcement_title"]),
+            strip_tags($_POST["announcement_desc"]),
+            strip_tags($_POST["announcement_type"]),
+            strip_tags($_POST["announcement_start_date"]),
+            strip_tags($_POST["announcement_end_date"]),
         ]);
 
-        if($check_announcement->fetch()){
+        if ($check_announcement->fetch()) {
             echo "announcement_added";
-        }
-        else{
+        } else {
             $insert_announcement = $conn->prepare("
             INSERT INTO announcement
             (announcement_title,announcement_desc,announcement_type,
@@ -29,16 +28,16 @@ if(isset($_POST["submit"])){
             VALUES (?,?,?,?,?)
             ");
             $inserted = $insert_announcement->execute([
-                $_POST["announcement_title"],
-                $_POST["announcement_desc"],
-                $_POST["announcement_type"],
-                $_POST["announcement_start_date"],
-                $_POST["announcement_end_date"],
+                strip_tags($_POST["announcement_title"]),
+                strip_tags($_POST["announcement_desc"]),
+                strip_tags($_POST["announcement_type"]),
+                strip_tags($_POST["announcement_start_date"]),
+                strip_tags($_POST["announcement_end_date"]),
             ]);
 
-            if($inserted){
+            if ($inserted) {
                 echo 1;
-            }else{
+            } else {
                 echo 0;
             }
         }

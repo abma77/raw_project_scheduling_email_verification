@@ -13,8 +13,8 @@ class Login extends Connection
   public $name;
   public function login($usernameemail, $password)
   {
-    $username = $_POST['uname'];
-    $password = $_POST['password'];
+    $username = strip_tags($_POST['uname']);
+    $password = strip_tags($_POST['password']);
     $stmt = $this->conn->prepare("SELECT * FROM users WHERE user_username = :uname && user_password = :password");
     $stmt->bindParam(':uname', $username);
     $stmt->bindParam(':password', $password);

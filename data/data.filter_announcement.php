@@ -8,8 +8,8 @@
         WHERE announcement_start_date = ? AND announcement_end_date = ?   
      ");
      $retrieve_filter_announcemet->execute([
-        $_POST["announcement_start_date"],
-        $_POST["announcement_end_date"],
+        strip_tags($_POST["announcement_start_date"]),
+        strip_tags($_POST["announcement_end_date"]),
      ]);
      if($row = $retrieve_filter_announcemet->fetch()){}
     }

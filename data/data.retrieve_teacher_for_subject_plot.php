@@ -12,8 +12,8 @@
             ");
             $retrieve_teacher_for_subject_plot->execute([
                
-                $_POST["semester"],
-                $_POST["school_year"]
+                strip_tags($_POST["semester"]),
+                strip_tags($_POST["school_year"])
             ]);
 
             echo '

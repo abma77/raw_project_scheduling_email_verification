@@ -2,7 +2,7 @@
 // DATABAE CONNECTION
 include_once("database.php");
 session_start();
-$user_fullname = $_SESSION["user_fullname"];
+$user_fullname = strip_tags($_SESSION["user_fullname"]);
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
 
@@ -12,8 +12,8 @@ if (isset($_POST["submit"])) {
                 ON section.section_name = schedule_section
                 WHERE schedule_semester =? AND schedule_school_year =? AND schedule_teacher = ?;");
         $retrieve_section_for_plot->execute([
-            $_POST["semester"],
-            $_POST["school_year"],
+            strip_tags($_POST["semester"]),
+            strip_tags($_POST["school_year"]),
             $user_fullname
         ]);
         echo '

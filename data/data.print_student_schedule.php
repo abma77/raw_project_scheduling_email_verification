@@ -16,9 +16,9 @@ if (isset($_POST["submit"])) {
             ");
         $retrieve_section_schedule->execute([
 
-            $_POST["semester"],
-            $_POST["school_year"],
-            $_POST["section"]
+            strip_tags($_POST["semester"]),
+            strip_tags($_POST["school_year"]),
+            strip_tags($_POST["section"])
         ]);
 
         while ($row = $retrieve_section_schedule->fetch()) {

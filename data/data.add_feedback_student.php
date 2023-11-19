@@ -14,8 +14,8 @@ $status = "Pending";
 // $user_fullname = $result['user_fullname'];
 // $user_type = $result['user_type'];
 
-if(isset($_POST["submit"])){
-    if(!empty($_POST["submit"])){
+if (isset($_POST["submit"])) {
+    if (!empty($_POST["submit"])) {
         $check_feedback_student = $conn->prepare("
         SELECT *
         FROM feedback
@@ -24,16 +24,15 @@ if(isset($_POST["submit"])){
         AND feedback_user_name_from = ?
     ");
         $check_feedback_student->execute([
-            $_POST["feedback_title"],
-            $_POST["feedback_desc"],
-            $_POST["feedback_type"],
-            $user_type,
-            $user_fullname,
+            strip_tags($_POST["feedback_title"]),
+            strip_tags($_POST["feedback_desc"]),
+            strip_tags($_POST["feedback_type"]),
+            strip_tags($user_type),
+            strip_tags($user_fullname),
         ]);
-        if($check_feedback_student->fetch()){
+        if ($check_feedback_student->fetch()) {
             echo "feedback_student_added";
-        }
-        else{
+        } else {
             $insert_feedback_student = $conn->prepare("
             INSERT INTO feedback
             (feedback_title,feedback_desc,feedback_type,feedback_status,
@@ -41,17 +40,16 @@ if(isset($_POST["submit"])){
             VALUES (?,?,?,?,?,?)
             ");
             $inserted = $insert_feedback_student->execute([
-                $_POST["feedback_title"],
-                $_POST["feedback_desc"],
-                $_POST["feedback_type"],
-                $status,
-                $user_type,
-                $user_fullname,
+                strip_tags($_POST["feedback_title"]),
+                strip_tags($_POST["feedback_desc"]),
+                strip_tags($_POST["feedback_type"]),
+                strip_tags($status),
+                strip_tags($user_type),
+                strip_tags($user_fullname),
             ]);
-            if($inserted){
+            if ($inserted) {
                 echo 1;
-            }
-            else{
+            } else {
                 echo 0;
             }
         }

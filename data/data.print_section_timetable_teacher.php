@@ -21,10 +21,10 @@ if (isset($_POST["submit"])) {
                 ON subject.subject_id = schedule.schedule_subject
                 WHERE schedule_semester = ? AND schedule_school_year = ? AND schedule_section = ? AND schedule_teacher = ?");
         $retrieve_section_schedule->execute([
-            $_POST["semester"],
-            $_POST["school_year"],
-            $_POST["section"],
-            $_SESSION["user_fullname"]
+            strip_tags($_POST["semester"]),
+            strip_tags($_POST["school_year"]),
+            strip_tags($_POST["section"]),
+            strip_tags($_SESSION["user_fullname"])
         ]);
 
         while ($row = $retrieve_section_schedule->fetch()) {

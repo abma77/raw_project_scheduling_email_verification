@@ -13,7 +13,7 @@ function legal_input($value)
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
         // $student_fullname =  legal_input($_POST["firstname"]) . " " . legal_input($_POST["middlename"]) . " " . legal_input($_POST["lastname"]);
-        $student_fullname = $_POST["lastname"] . ", " . legal_input($_POST["firstname"]);
+        $student_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"]));
         // CHECK ID NUMBER
         $check_id_number = $conn->prepare("
                 SELECT student_id_number
@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
                 WHERE student_id_number = ?
             ");
         $check_id_number->execute([
-            $_POST["ctuid"]
+            strip_tags($_POST["ctuid"])
         ]);
 
         if ($check_id_number->fetch()) {
@@ -34,14 +34,14 @@ if (isset($_POST["submit"])) {
                     (?,?,?,?,?,?,?,?)
                 ");
             $student_added = $insert_student->execute([
-                $_POST["ctuid"],
-                $_POST["firstname"],
-                $_POST["middlename"],
-                $_POST["lastname"],
-                $_POST["course"],
-                $_POST["year"],
-                $_POST["section"],
-                $_POST["status"],
+                strip_tags($_POST["ctuid"]),
+                strip_tags($_POST["firstname"]),
+                strip_tags($_POST["middlename"]),
+                strip_tags($_POST["lastname"]),
+                strip_tags($_POST["course"]),
+                strip_tags($_POST["year"]),
+                strip_tags($_POST["section"]),
+                strip_tags($_POST["status"]),
             ]);
 
             if ($student_added) {
@@ -57,13 +57,13 @@ if (isset($_POST["submit"])) {
                     (?,?,?,?,?,?,?)
                 ");
             $student_user_added = $insert_student_user->execute([
-                $_POST["username"],
-                $_POST["password"],
+                strip_tags($_POST["username"]),
+                strip_tags($_POST["password"]),
                 $student_fullname,
-                $_POST["phone_number"],
+                strip_tags($_POST["phone_number"]),
                 "Student",
-                $_POST["address"],
-                $_POST["ctuid"],
+                strip_tags($_POST["address"]),
+                strip_tags($_POST["ctuid"]),
 
             ]);
 

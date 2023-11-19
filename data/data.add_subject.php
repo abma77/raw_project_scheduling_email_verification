@@ -11,8 +11,8 @@
                 WHERE subject_name = ? OR subject_title = ?
             ");
             $check_subject->execute([
-                $_POST["subject_name"],
-                $_POST["subject_title"]
+                strip_tags($_POST["subject_name"]),
+                strip_tags($_POST["subject_title"])
             ]);
 
             if($check_subject->fetch()){
@@ -26,11 +26,11 @@
                     (?,?,?,?,?)
                 ");
                 $added = $insert_subject->execute([
-                    $_POST["subject_name"],
-                    $_POST["subject_title"],
-                    $_POST["subject_unit"],
-                    $_POST["subject_lecture_hour"],
-                    $_POST["subject_laboratory_hour"]
+                    strip_tags($_POST["subject_name"]),
+                    strip_tags($_POST["subject_title"]),
+                    strip_tags($_POST["subject_unit"]),
+                    strip_tags($_POST["subject_lecture_hour"]),
+                    strip_tags($_POST["subject_laboratory_hour"])
                 ]);
 
                 if($added){

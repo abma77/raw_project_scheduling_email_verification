@@ -14,8 +14,8 @@ if (isset($_POST["submit"])) {
                 ORDER BY section_name ASC;
             ");
         $retrieve_section_for_plot->execute([
-            $_POST["semester"],
-            $_POST["school_year"]
+            strip_tags($_POST["semester"]),
+            strip_tags($_POST["school_year"])
         ]);
 
         echo '

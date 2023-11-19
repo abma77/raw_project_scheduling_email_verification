@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
             ");
         $check_a_y->execute([
             strip_tags($_POST["academic_year"]),
-            $_POST["semester"]
+            strip_tags($_POST["semester"])
         ]);
 
         if ($row = $check_a_y->fetch()) {
@@ -26,8 +26,8 @@ if (isset($_POST["submit"])) {
                     VALUES(?, ?)
                 ");
             $added = $add_a_y->execute([
-                $_POST["academic_year"],
-                $_POST["semester"]
+                strip_tags($_POST["academic_year"]),
+                strip_tags($_POST["semester"])
             ]);
 
             if ($added) {

@@ -14,9 +14,9 @@
                 ON subject.subject_id = schedule.schedule_subject
                 WHERE schedule_semester = ? AND schedule_school_year = ? AND schedule_room = ? ");
             $retrieve_room_schedule->execute([
-                $_POST["semester"],
-                $_POST["school_year"],
-                $_POST["room"]
+                strip_tags($_POST["semester"]),
+                strip_tags($_POST["school_year"]),
+                strip_tags($_POST["room"])
             ]);
 
             while($row = $retrieve_room_schedule->fetch()){
@@ -67,8 +67,8 @@
     <tbody>
         <?php
             foreach($times as $i=>$time){ ?>
-                <tr class="text-center">
-                    <?php
+        <tr class="text-center">
+            <?php
                         if($i % 2 == 0){
                             echo "
                                 <th rowspan='2' width='150px' style='font-size: 9px;'>".$time_proper[$i]."-".$time_proper[$i+2]."</th>
@@ -100,85 +100,101 @@
                             }
                         }
                     ?>
-                    
-                </tr>
-            <?php }
+
+        </tr>
+        <?php }
         ?>
     </tbody>
 </table>
 
 <style>
-    td {
-        text-align: center;
-        padding: 10px 20px;
-        position:relative;
-        border: 1px solid black;
-    }
-    th{
-        border: 1px solid black;
-    }
-    .weekDayHeader{
-        background-color: yellow;
-    }
-    table {
-        border-spacing: 0;
-        border-collapse: collapse;
-    }
+td {
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+    border: 1px solid black;
+}
+
+th {
+    border: 1px solid black;
+}
+
+.weekDayHeader {
+    background-color: yellow;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.item {
+    background: #576CBC;
+    color: white;
+}
+
+[class*="row-span"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.sched:hover {
+    cursor: pointer;
+    color: #EBB02D;
+}
+
+.row-span-10 {
+    height: calc(1000% + 9*1px);
+}
+
+.row-span-9 {
+    height: calc(900% + 8*1px);
+}
+
+.row-span-8 {
+    height: calc(800% + 7*1px);
+}
+
+.row-span-7 {
+    height: calc(700% + 6*1px);
+}
+
+.row-span-6 {
+    height: calc(600% + 5*1px);
+}
+
+.row-span-5 {
+    height: calc(500% + 4*1px);
+}
+
+.row-span-4 {
+    height: calc(400% + 3*1px);
+}
+
+.row-span-3 {
+    height: calc(300% + 2*1px);
+}
+
+.row-span-2 {
+    height: calc(200% + 1*1px);
+}
+
+.row-span-1 {
+    height: calc(100% + 0*1px);
+}
+
+@media print {
+
+    body,
+    table,
+    th,
+    td,
     .item {
-        background: #576CBC;
-        color: white;
+        print-color-adjust: exact !important;
     }
-    [class*="row-span"] {
-        position:absolute;
-        top:0;
-        left:0;
-        right:0;
-    }
-
-    .sched:hover{
-        cursor: pointer;
-        color: #EBB02D;
-    }
-
-    .row-span-10 {
-        height:calc(1000% + 9*1px);
-    }
-    .row-span-9 {
-        height:calc(900% + 8*1px);
-    }
-    .row-span-8 {
-        height:calc(800% + 7*1px);
-    }
-    .row-span-7 {
-        height:calc(700% + 6*1px);
-    }
-    .row-span-6 {
-        height:calc(600% + 5*1px);
-    }
-    .row-span-5 {
-        height:calc(500% + 4*1px);
-    }
-    .row-span-4 {
-        height:calc(400% + 3*1px);
-    }
-    .row-span-3 {
-        height:calc(300% + 2*1px);
-    }
-    .row-span-2 {
-        height:calc(200% + 1*1px);
-    }
-    .row-span-1 {
-        height:calc(100% + 0*1px);
-    }
-
-    @media print {
-        body,
-        table,
-        th,td,
-        .item{
-            print-color-adjust: exact !important;
-        }
-    }
+}
 </style>
 
 <?php 

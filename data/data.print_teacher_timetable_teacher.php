@@ -23,9 +23,9 @@ if (isset($_POST["submit"])) {
             ");
         $retrieve_teacher_schedule->execute([
 
-            $_POST["semester"],
-            $_POST["school_year"],
-            $_SESSION["user_fullname"]
+            strip_tags($_POST["semester"]),
+            strip_tags($_POST["school_year"]),
+            strip_tags($_SESSION["user_fullname"])
         ]);
 
         while ($row = $retrieve_teacher_schedule->fetch()) {

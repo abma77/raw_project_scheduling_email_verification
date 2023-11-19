@@ -1,7 +1,23 @@
 <?php
 require '../data//login.php';
 $select = new Select();
+if ($_SESSION["user_type"] != "Teacher") {
+    session_start();
 
+    session_unset();
+    session_destroy();
+
+    header("Location: ../index.php");
+} else {
+    $select = new Select();
+    // $user_fullname = "";
+    // $user_type = "Teacher";
+    if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
+        $user_id = $select->selectUserById($_SESSION["id"]);
+        // $user_type = $select->selectUserByType($_SESSION["user_type"]);
+        // $user_fullname = $select->selectUserByName($_SESSION["user_fullname"]);
+    }
+}
 // if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
 //     $user_id = $select->selectUserById($_SESSION["id"]);
 //     $user_type = $select->selectUserById($_SESSION["user_type"]);
@@ -107,8 +123,7 @@ $select = new Select();
                                                 id="print-select-section-teacher">
                                                 <option value="">Select Section</option>
                                             </select>
-                                            <button class="btn btn-light mx-0 rounded-1"
-                                                id="print-section-teacher">
+                                            <button class="btn btn-light mx-0 rounded-1" id="print-section-teacher">
                                                 <i class="bi bi-arrow-down-square-fill mx-3 h1"></i>
                                             </button>
                                             <!-- <button class="btn btn-danger shadow-none rounded-0 mx-3"
@@ -130,8 +145,7 @@ $select = new Select();
                                                 id="print-select-teacher-teacher">
                                                 <option value="">Select Teacher</option>
                                             </select> -->
-                                            <button class="btn btn-light h3 mx-2"
-                                                id="print-teacher-teacher">
+                                            <button class="btn btn-light h3 mx-2" id="print-teacher-teacher">
                                                 <i class="bi bi-arrow-down-square-fill h2"><br>pdf</br></i>
                                             </button>
                                         </div>

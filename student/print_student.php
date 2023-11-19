@@ -1,11 +1,19 @@
 <?php
 require '../data//login.php';
 $select = new Select();
+if ($_SESSION["user_type"] != "Student") {
+    session_start();
 
-if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
-    $user_id = $select->selectUserById($_SESSION["id"]);
-    $user_type = $select->selectUserById($_SESSION["user_type"]);
-    $user_name = $select->selectUserById($_SESSION["user_fullname"]);
+    session_unset();
+    session_destroy();
+
+    header("Location: ../index.php");
+} else {
+    if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
+        $user_id = $select->selectUserById($_SESSION["id"]);
+        $user_type = $select->selectUserById($_SESSION["user_type"]);
+        $user_name = $select->selectUserById($_SESSION["user_fullname"]);
+    }
 }
 
 ?>
@@ -105,8 +113,7 @@ if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
                                                 id="print-select-section-teacher">
                                                 <option value="">Select Section</option>
                                             </select> -->
-                                            <button class="btn btn-light h2 mx-2"
-                                                id="print-section-student">
+                                            <button class="btn btn-light h2 mx-2" id="print-section-student">
                                                 <i class="bi bi-arrow-down-square-fill h2"><br>pdf</br></i>
                                             </button>
                                         </div>
@@ -162,11 +169,11 @@ if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
     <!-- BOOTSTRAP JS LINK -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
+        </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+        </script>
     <!-- JQUERY JS LINK -->
     <script src="../js/jquery-3.6.4.min.js"></script>
     <!-- SCRIPT -->

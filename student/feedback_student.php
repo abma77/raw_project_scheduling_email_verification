@@ -10,7 +10,7 @@ if ($_SESSION["user_type"] != "Student") {
     session_unset();
     session_destroy();
 
-    header("Location: ../login_page.php");
+    header("Location: ../index.php");
 }
 
 if (!empty($_SESSION["id"]) && !isset($_SESSION)) {

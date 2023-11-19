@@ -23,23 +23,24 @@ require("./data/data.verification_email_functions.php");
 <body>
 
     <div class="alert toast-container position-fluid  translate-middle-x" id="alert-messages"></div>
-   <div class="container-fluid">
+    <div class="container-fluid">
         <div class="col-lg-3 col col-13 ">
-                    <div class="card rounded-1 border-1">
+            <div class="card rounded-1 border-1">
 
-                    <div class="card-header">
-                            <!-- This is button from register -->
-            <div class="d-flex justify-content-center col-12 ">
-                <div class="button-box">
-                    <input type="checkbox" id="roleCheckbox" data-toggle="switchbutton" checked data-onlabel="Student"
-                        data-offlabel="Teacher" data-onstyle="success" data-offstyle="danger">
-                </div>
-            </div>
+                <div class="card-header">
+                    <!-- This is button from register -->
+                    <div class="d-flex justify-content-center col-12 ">
+                        <div class="button-box">
+                            <input type="checkbox" id="roleCheckbox" data-toggle="switchbutton" checked
+                                data-onlabel="Student" data-offlabel="Teacher" data-onstyle="success"
+                                data-offstyle="danger">
                         </div>
+                    </div>
+                </div>
 
 
-            <!-- This is button from register -->
-           
+                <!-- This is button from register -->
+
                 <div class="card-body">
                     <form id="register-student" class="row">
                         <div class="form-group py-1 col-6">
@@ -76,7 +77,7 @@ require("./data/data.verification_email_functions.php");
                         </div>
                         <div class="form-group py-1 col-6">
                             <select type="text" class="form-select" placeholder="Course" name="register-student-course"
-                                required>
+                                id="register-student-course" required>
                                 <option value="" selected>Select Course</option>
                                 <option value="BSIT">BSIT</option>
                                 <option value="BIT">BIT</option>
@@ -84,7 +85,8 @@ require("./data/data.verification_email_functions.php");
                             </select>
                         </div>
                         <div class="form-group py-1 col-6">
-                            <select class="form-select" placeholder="Year" name="register-student-year" required>
+                            <select class="form-select" placeholder="Year" name="register-student-year"
+                                id="register-student-year" required>
                                 <option value="" selected>Select Year</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -114,7 +116,7 @@ require("./data/data.verification_email_functions.php");
                                 <option value="" selected>Select Section</option>
                             </select>
                         </div>
-                       
+
                         <div class="form-group py-1 col-6">
                             <select name="register-student-status" class="form-select col-6" required>
                                 <option value="" selected>Select Status</option>
@@ -128,7 +130,7 @@ require("./data/data.verification_email_functions.php");
                         </div>
                         <button type="submit" class="btn btn-primary my-3" id="add-register-student-btn">Register as
                             Student</button>
-                            
+
                     </form>
 
                     <form id="register-teacher" class="row">
@@ -218,25 +220,25 @@ require("./data/data.verification_email_functions.php");
                         <button type="submit" class="btn btn-primary my-3" id="add-register-teacher-btn">Register as
                             Teacher</button>
                     </form>
-             
-
-<p class="buttons"> <a href="./login_page.php"><b> BACK TO LOGIN</b></a></p>
 
 
+                    <p class="buttons"> <a href="./index.php"><b> BACK TO LOGIN</b></a></p>
+
+
+
+                </div>
 
             </div>
-           
         </div>
-        </div>
-     
-    <script src="./js/bootstrap.min.js"></script>
-    <!-- JQUERY JS LINK -->
-    <script src="./js/jquery-3.6.4.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="./js/index.js?<?php echo time(); ?>"></script>
-    <script src="./js/bootstrap-switch-button.js"></script>
-    <script src="./js/register_argie_js.js"></script>
-    <script src="./js/validation.js"></script>
+
+        <script src="./js/bootstrap.min.js"></script>
+        <!-- JQUERY JS LINK -->
+        <script src="./js/jquery-3.6.4.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="./js/index.js?<?php echo time(); ?>"></script>
+        <script src="./js/bootstrap-switch-button.js"></script>
+        <script src="./js/register_argie_js.js"></script>
+        <script src="./js/validation.js"></script>
 </body>
 
 </html>

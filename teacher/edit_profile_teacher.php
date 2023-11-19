@@ -10,7 +10,7 @@ if ($_SESSION["user_type"] != "Teacher") {
     session_unset();
     session_destroy();
 
-    header("Location: ../login_page.php");
+    header("Location: ../index.php");
 } else {
     $retrieve_teacher_info = $conn->prepare("
    SELECT * FROM users

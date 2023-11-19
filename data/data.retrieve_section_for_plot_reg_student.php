@@ -4,7 +4,7 @@ include_once("database.php");
 
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
-        $like = "%" . strip_tags($_POST["course"]) . " " . strip_tags($_POST["year"]) . "%";
+        $like = "%" . ($_POST["course"]) . " " . ($_POST["year"]) . "%";
         $retrieve_section_for_plot = $conn->prepare("
                 SELECT *
                 FROM section_detail

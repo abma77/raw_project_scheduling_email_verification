@@ -707,7 +707,7 @@ $(document).ready(function () {
                     $("#alert-messages").html(trigger_toast_message("Student has been added. We've send a verification code on your email addresss. Please Check and you wil go back to Login Page.", __icon.success_icon, "bg-success", "text-dark"));
                     trigger_toast("trigger-toast");
                     setTimeout(function () {
-                        window.location.href = "/raw_project_scheduling_email_verification/login_page.php";
+                        window.location.href = "/raw_project_scheduling_email_verification/index.php";
                     }, 3000);
 
 
@@ -807,7 +807,7 @@ $(document).ready(function () {
                     $("#alert-messages").html(trigger_toast_message("Student has been updated. ", __icon.success_icon, "bg-success", "text-dark"));
                     trigger_toast("trigger-toast");
                     // setTimeout(function () {
-                    //     window.location.href = "/raw_project_scheduling_email_verification/login_page.php";
+                    //     window.location.href = "/raw_project_scheduling_email_verification/index.php";
                     // }, 3000);
 
 
@@ -919,7 +919,7 @@ $(document).ready(function () {
                     $("#alert-messages").html(trigger_toast_message("Teacher has been added. We've send a verification code on your email addresss. Please Check and you wil go back to Login Page.", __icon.success_icon, "bg-success", "text-dark"));
                     trigger_toast("trigger-toast");
                     setTimeout(function () {
-                        window.location.href = "/raw_project_scheduling_email_verification/login_page.php";
+                        window.location.href = "/raw_project_scheduling_email_verification/index.php";
                     }, 3000);
 
 
@@ -1031,7 +1031,7 @@ $(document).ready(function () {
                     $("#alert-messages").html(trigger_toast_message("Teacher has been updated. ", __icon.success_icon, "bg-success", "text-dark"));
                     trigger_toast("trigger-toast");
                     // setTimeout(function () {
-                    //     window.location.href = "/raw_project_scheduling_email_verification/login_page.php";
+                    //     window.location.href = "/raw_project_scheduling_email_verification/index.php";
                     // }, 3000);
 
 

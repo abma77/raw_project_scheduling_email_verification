@@ -5,29 +5,37 @@ $select = new Select();
 $user_fullname = "";
 $user_type = "Student";
 
-$retrieve_student_info = $conn->prepare("
+if ($_SESSION["user_type"] != "Student") {
+    session_start();
+
+    session_unset();
+    session_destroy();
+
+    header("Location: ../index.php");
+} else {
+    $retrieve_student_info = $conn->prepare("
    SELECT * FROM `student`
 LEFT JOIN users
 ON student.student_fullname = users.user_fullname
 WHERE student.student_fullname = ?;
 ");
-$retrieve_student_info->execute([$_SESSION['user_fullname']]);
-$row = $retrieve_student_info->fetch();
-$user_fullname = $_SESSION["user_fullname"];
-$username = $row["user_username"];
-$password = $row["user_password"];
-$ctuid = $row["student_id_number"];
-$fname = $row["student_firstname"];
-$mname = $row["student_middlename"];
-$lname = $row["student_lastname"];
-$course = $row["student_course"];
-$number = $row["user_contact"];
-$email = $row["user_email"];
-$year = $row["student_year"];
-$section = $row["student_section"];
-$status = $row["student_status"];
-$address = $row["user_address"];
-
+    $retrieve_student_info->execute([$_SESSION['user_fullname']]);
+    $row = $retrieve_student_info->fetch();
+    $user_fullname = $_SESSION["user_fullname"];
+    $username = $row["user_username"];
+    $password = $row["user_password"];
+    $ctuid = $row["student_id_number"];
+    $fname = $row["student_firstname"];
+    $mname = $row["student_middlename"];
+    $lname = $row["student_lastname"];
+    $course = $row["student_course"];
+    $number = $row["user_contact"];
+    $email = $row["user_email"];
+    $year = $row["student_year"];
+    $section = $row["student_section"];
+    $status = $row["student_status"];
+    $address = $row["user_address"];
+}
 
 if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
     $user_id = $select->selectUserById($_SESSION["id"]);

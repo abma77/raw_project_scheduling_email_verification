@@ -8,7 +8,7 @@ if ($_SESSION["user_type"] != "Teacher") {
     session_unset();
     session_destroy();
 
-    header("Location: ../login_page.php");
+    header("Location: ../index.php");
 }
 // if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
 //     $user_id = $select->selectUserById($_SESSION["id"]);

@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
             ");
         $check_a_y->execute([
             strip_tags($_POST["academic_year"]),
-            strip_tags($_POST["semester"])
+            $_POST["semester"]
         ]);
 
         if ($row = $check_a_y->fetch()) {

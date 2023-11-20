@@ -77,11 +77,12 @@ WHERE teacher.teacher_fullname = ?;
 
 <body class="bg-light">
     <div class="my-2 toast-container position-fixed top-0 start-50 translate-middle-x" id="alert-messages"></div>
-    <div class="container-fluid p-0 d-flex" style="overflow-x: hidden;">
-        <?php include_once("../Components/teacher_Sidebar.php") ?>
-        <div class="position-relative main-content" id="plot-content" style="width: 100%;">
-            <?php include_once("../Components/teacher_NavBar.php") ?>
-            <!-- Modified section for time -->
+
+    <?php include_once("../Components/teacher_Sidebar.php") ?>
+    <div class="position-relative main-content" id="plot-content">
+        <?php include_once("../Components/teacher_NavBar.php") ?>
+        <!-- Modified section for time -->
+        <div class="container">
             <div class="row g-2 px-3 my-1">
                 <div class="col-lg-6 col col-12 shadow-sm">
                     <div class="card rounded-0 border-0">

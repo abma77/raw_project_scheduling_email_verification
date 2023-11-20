@@ -69,11 +69,12 @@ if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
 
 <body class="bg-light">
     <div class="my-2 toast-container position-fixed top-0 start-50 translate-middle-x" id="alert-messages"></div>
-    <div class="container-fluid p-0 d-flex" style="overflow-x: hidden;">
-        <?php include_once("../Components/student_Sidebar.php") ?>
-        <div class="position-relative main-content" id="plot-content" style="width: 100%;">
-            <?php include_once("../Components/student_NavBar.php") ?>
-            <!-- Modified section for time -->
+
+    <?php include_once("../Components/student_Sidebar.php") ?>
+    <div class="position-relative main-content" id="plot-content">
+        <?php include_once("../Components/student_NavBar.php") ?>
+        <!-- Modified section for time -->
+        <div class="container">
             <div class="row g-2 px-3 my-1">
                 <div class="col-lg-6 col col-12 shadow-sm">
                     <div class="card rounded-0 border-0">
@@ -204,11 +205,11 @@ if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
 <!-- BOOTSTRAP JS LINK -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-</script>
+    </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-</script>
+    </script>
 <!-- JQUERY JS LINK -->
 <script src="../js//jquery-3.6.4.min.js"></script>
 <script src="../js//datatables.min.js?<?php echo time(); ?>"></script>

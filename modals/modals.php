@@ -16,32 +16,32 @@
                             <div class="col-6 mt-2">
                                 <label class="form-label">Username</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="Username"
-                                    name="username" required>
+                                    name="username" id="username" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Password</label>
                                 <input type="password" class="form-control rounded-0 shadow-none" placeholder="Password"
-                                    name="password" required>
+                                    name="password" id="password" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">First Name</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="First Name"
-                                    name="firstname" required>
+                                    name="firstname" id="add-teacher-first-name" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Last Name</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="Last Name"
-                                    name="lastname" required>
+                                    name="lastname" id="add-teacher-last-name" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Middle Name</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="Middle Name"
-                                    name="middlename" required>
+                                    name="middlename" id="add-teacher-middle-name" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">ID Number</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="ID Number"
-                                    name="id_number" required>
+                                    name="id_number" id="add-teacher-ctuid" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Address</label>
@@ -51,7 +51,12 @@
                             <div class="col-6 mt-2">
                                 <label class="form-label">Phone Number</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="Phone Number"
-                                    name="phone_number" required>
+                                    name="phone_number" id="add-teacher-phone-number" required>
+                            </div>
+                            <div class="col-6 mt-2">
+                                <label class="form-label">Email</label>
+                                <input id="select-master" class="form-control shadow-none rounded-0" list=""
+                                    placeholder="Email" name="email" id="add-teacher-email" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Bachelor</label>
@@ -112,7 +117,7 @@
                                 <input type="text" class="form-control shadow-none rounded-0" placeholder="Extension"
                                     name="extension" required>
                             </div>
-                            <div class="col-6 mt-2">
+                            <div class="col-12 mt-2">
                                 <label class="form-label">Others</label>
                                 <input type="text" class="form-control shadow-none rounded-0" placeholder="Others"
                                     name="others" required>
@@ -146,32 +151,32 @@
                             <div class="col-6 mt-2">
                                 <label class="form-label">Username</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="Username"
-                                    name="username" required>
+                                    name="username" id="username" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Password</label>
                                 <input type="password" class="form-control rounded-0 shadow-none" placeholder="Password"
-                                    name="password" required>
+                                    name="password" id="password" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">First Name</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="First Name"
-                                    name="firstname" required>
+                                    name="firstname" id="add-student-first-name" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Last Name</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="Last Name"
-                                    name="lastname" required>
+                                    name="lastname" id="add-student-last-name" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Middle Name</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="Middlename"
-                                    name="middlename" required>
+                                    name="middlename" id="add-student-middle-name" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">ID Number</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="ID Number"
-                                    name="id_number" required>
+                                    name="id_number" id="add-student-ctuid" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Address</label>
@@ -181,12 +186,13 @@
                             <div class="col-6 mt-2">
                                 <label class="form-label">Phone Number</label>
                                 <input id="select-bachelor" type="text" class="form-control shadow-none rounded-0"
-                                    placeholder="Phone Number" name="phone_number" required>
+                                    placeholder="Phone Number" name="phone_number" id="add-student-phone-number"
+                                    required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Email</label>
                                 <input id="select-master" class="form-control shadow-none rounded-0" list=""
-                                    placeholder="Email" name="email" required>
+                                    placeholder="Email" id="add-student-email" name="email" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Course</label>
@@ -204,7 +210,7 @@
                                     placeholder="Section" name="section" required>
                             </div>
 
-                            <div class="col-6 mt-2">
+                            <div class="col-12 mt-2">
                                 <label class="form-label">Status</label>
                                 <select class="form-select rounded-0 shadow-none" name="status" id="" required>
                                     <option value="" selected>Select Status</option>
@@ -424,3 +430,4 @@
         </div>
     </div>
 </div>
+<script src="../js/validation_admin.js"></script>

@@ -49,11 +49,38 @@ body {
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
-
     transition: all .3s ease;
     color: hsl(0, 0%, 100%);
 
 }
+
+.container button{
+    background-color: rgb(168, 45, 45);
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+     transition: all .3s ease;
+    color: hsl(0, 0%, 100%);
+}
+
+.container button:hover {
+ box-shadow: rgb(110 9 25) 0px 7px 0px 0px;
+}
+
+.container button:active {
+ background-color: rgb(255 206 213);
+ box-shadow: rgb(55 11 18) 0px 0px 0px 0px;
+ transform: translateY(5px);
+ transition: 1100ms;
+}
+
 
 h1 {
 

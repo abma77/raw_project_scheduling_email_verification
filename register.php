@@ -56,6 +56,7 @@ require("./data/data.verification_email_functions.php");
                         </div>
                         <div class="form-group py-1 col-6">
                             <input type="text" class="form-control" placeholder="CTU-ID" name="register-student-ctuid"
+                            type="text" maxlength="7"
                                 id="register-student-ctuid" required>
                         </div>
                         <div class="form-group py-1 col-6">
@@ -72,6 +73,7 @@ require("./data/data.verification_email_functions.php");
                         </div>
                         <div class="form-group py-1 col-6">
                             <input type="text" class="form-control" placeholder="Phone Number"
+                                type="text" maxlength="11"
                                 name="register-student-phone-number" id="register-student-phone-number" required>
                         </div>
                         <div class="form-group py-1 col-6">
@@ -147,6 +149,7 @@ require("./data/data.verification_email_functions.php");
                         </div>
                         <div class="form-group py-1 col-6">
                             <input type="text" class="form-control" placeholder="CTU-ID" name="register-teacher-ctuid"
+                                type="text" maxlength="5"
                                 id="register-teacher-ctuid" required>
                         </div>
                         <div class="form-group py-1 col-6">
@@ -167,6 +170,7 @@ require("./data/data.verification_email_functions.php");
                         </div>
                         <div class="form-group py-1 col-6">
                             <input type="text" class="form-control" placeholder="Phone Number"
+                                type="text" maxlength="11"
                                 id="register-teacher-phone-number" name="register-teacher-phone-number">
                         </div>
                         <div class="form-group py-1 col-6">

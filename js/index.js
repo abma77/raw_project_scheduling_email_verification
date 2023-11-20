@@ -602,19 +602,47 @@ $(document).ready(function () {
                 $("#add-student-btn").html("Add Student");
 
                 console.log(response)
-
-                if (response == "id_number_error") {
-                    $("#alert-messages").html(trigger_toast_message("ID Number is used.", __icon.erro_icon, "bg-ternary", "text-white"));
+                if (response == "username_same_error") {
+                    $("#alert-messages").html(trigger_toast_message("Some details has been used by another user. Please check your details.", __icon.erro_icon, "bg-ternary", "text-white"));
                     trigger_toast("trigger-toast");
                 }
+                else if (response == "username_error") {
+                    $("#alert-messages").html(trigger_toast_message("Invalid Username. Username should have atleast 1 number", __icon.erro_icon, "bg-ternary", "text-white"));
+                    trigger_toast("trigger-toast");
+                }
+                else if (response == "username_errorpassword_error") {
+                    $("#alert-messages").html(trigger_toast_message("Username should have atleast 1 number and create a Password with at least 8 characters and atleast 1 number.", __icon.erro_icon, "bg-ternary", "text-white"));
+                    trigger_toast("trigger-toast");
+                }
+                else if (response == "password_error") {
+                    $("#alert-messages").html(trigger_toast_message("Put a Password at least 8 characters and at least 1 number.", __icon.erro_icon, "bg-ternary", "text-white"));
+                    trigger_toast("trigger-toast");
+                }
+                else if (response == "email_error") {
+                    $("#alert-messages").html(trigger_toast_message("Please Enter Valid CTU Email.", __icon.erro_icon, "bg-ternary", "text-white"));
+                    trigger_toast("trigger-toast");
+                }
+                else if (response == "username_errorid_number_error") {
+                    $("#alert-messages").html(trigger_toast_message("Invalid Username Or Password  And ID Number is Used. Please put a number both Username And Password.", __icon.erro_icon, "bg-ternary", "text-white"));
+                    trigger_toast("trigger-toast");
+                }
+                else if (response == "id_number_error") {
+                    $("#alert-messages").html(trigger_toast_message("ID Number has been used by another user.Please check your ID Number.", __icon.erro_icon, "bg-ternary", "text-white"));
+                    trigger_toast("trigger-toast");
+                }
+
                 else if (response == 11) {
 
-                    $("#alert-messages").html(trigger_toast_message("Student has been added.", __icon.success_icon, "bg-success", "text-dark"));
+                    $("#alert-messages").html(trigger_toast_message("Student has been added. ", __icon.success_icon, "bg-success", "text-dark"));
                     trigger_toast("trigger-toast");
+                    setTimeout(function () {
+                        window.location.href = "/raw_project_scheduling_email_verification/index.php";
+                    }, 3000);
+
 
                 } else {
 
-                    $("#alert-messages").html(trigger_toast_message("Unable to add Student.", __icon.erro_icon, "bg-ternary", "text-white"));
+                    $("#alert-messages").html(trigger_toast_message("Unable to add Student. Please check the info required.", __icon.erro_icon, "bg-ternary", "text-white"));
                     trigger_toast("trigger-toast");
 
                 }
@@ -1353,6 +1381,13 @@ $(document).ready(function () {
                 $("#add-section-plot-btn").html("Add Section Plot");
 
                 console.log(response)
+                if (response == 1) {
+                    $("#alert-messages").html(trigger_toast_message("Section is added to plot.", __icon.success_icon, "bg-success", "text-dark"));
+                    trigger_toast("trigger-toast");
+                } else {
+                    $("#alert-messages").html(trigger_toast_message(response, __icon.erro_icon, "bg-danger", "text-white"));
+                    trigger_toast("trigger-toast");
+                }
             }
         });
 

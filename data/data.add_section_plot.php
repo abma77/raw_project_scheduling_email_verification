@@ -54,6 +54,8 @@ if (isset($_POST["submit"])) {
 
             if ($added == 1) {
                 echo 1;
+            } else {
+                echo "add_section_detail_error";
             }
         }
 

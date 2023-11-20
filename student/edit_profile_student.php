@@ -57,9 +57,13 @@ if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
     <!-- BOOTSTRAP CSS LINK -->
     <link rel="stylesheet" href="..//css//main.min.css">
     <!-- BOOTSTRAP ICON LINK -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- CSS LINK -->
     <link rel="stylesheet" href="..//css//nstyle.css? <?php echo time(); ?>">
+    <link rel="stylesheet" href="..//css//edit_profile_css.css">
     <title>Student</title>
 </head>
 
@@ -85,7 +89,8 @@ if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
                                 </div>
                                 <div class="form-group py-1 col-6">
                                     <input type="password" class="form-control" placeholder="Password"
-                                        name="edit-profile-student-password" required>
+                                        name="edit-profile-student-password" id="edit-profile-student-password"
+                                        required>
                                 </div>
                                 <div class="form-group py-1 col-6">
                                     <input type="text" class="form-control" placeholder="CTU-ID"
@@ -199,16 +204,16 @@ if (!empty($_SESSION["id"]) && !isset($_SESSION)) {
 <!-- BOOTSTRAP JS LINK -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+</script>
 <!-- JQUERY JS LINK -->
 <script src="../js//jquery-3.6.4.min.js"></script>
 <script src="../js//datatables.min.js?<?php echo time(); ?>"></script>
 <script src="../js//index.js?<?php echo time(); ?>"></script>
 <script src="../js//time.js?<?php echo time(); ?>"></script>
-
+<script src="../js//edit_profile_js.js"></script>
 
 </html>

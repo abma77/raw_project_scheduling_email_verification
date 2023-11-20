@@ -12,7 +12,10 @@ require("./data/data.verification_email_functions.php");
     <!-- BOOTSTRAP CSS LINK -->
     <link rel="stylesheet" href=".//css//main.min.css">
     <!-- BOOTSTRAP ICON LINK -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- CSS LINK -->
     <link rel="stylesheet" href="./css/register_argie_css.css">
     <link rel="stylesheet" href=".//css//bootstrap-switch-button.min.css">
@@ -49,7 +52,7 @@ require("./data/data.verification_email_functions.php");
                         </div>
                         <div class="form-group py-1 col-6">
                             <input type="password" class="form-control" placeholder="Password"
-                                name="register-student-password" required>
+                                name="register-student-password" id="register-student-password" required>
                         </div>
                         <div class="form-group py-1 col-6">
                             <input type="text" class="form-control" placeholder="CTU-ID" name="register-student-ctuid"
@@ -140,7 +143,7 @@ require("./data/data.verification_email_functions.php");
                         </div>
                         <div class="form-group py-1 col-6">
                             <input type="password" class="form-control" placeholder="Password"
-                                name="register-teacher-password" required>
+                                name="register-teacher-password" id="register-teacher-password" required>
                         </div>
                         <div class="form-group py-1 col-6">
                             <input type="text" class="form-control" placeholder="CTU-ID" name="register-teacher-ctuid"

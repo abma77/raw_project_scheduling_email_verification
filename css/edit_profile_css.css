@@ -1,0 +1,23 @@
+.password-toggle {
+    position: relative;
+}
+
+.password-toggle .toggle-icon {
+    position: absolute;
+    top: 55%;
+    right: 7%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.password-toggle .toggle-icon i {
+    font-size: 18px;
+}
+
+.password-toggle .toggle-icon.show-password i.fa-eye-slash {
+    display: none;
+}
+
+.password-toggle .toggle-icon.hide-password i.fa-eye {
+    display: none;
+}

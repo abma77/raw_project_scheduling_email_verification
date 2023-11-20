@@ -65,9 +65,13 @@ WHERE teacher.teacher_fullname = ?;
     <!-- BOOTSTRAP CSS LINK -->
     <link rel="stylesheet" href="..//css//main.min.css">
     <!-- BOOTSTRAP ICON LINK -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- CSS LINK -->
     <link rel="stylesheet" href="..//css//nstyle.css? <?php echo time(); ?>">
+    <link rel="stylesheet" href="..//css//edit_profile_css.css">
     <title>ADMIN</title>
 </head>
 
@@ -223,6 +227,7 @@ WHERE teacher.teacher_fullname = ?;
 <script src="../js//datatables.min.js?<?php echo time(); ?>"></script>
 <script src="../js//index.js?<?php echo time(); ?>"></script>
 <script src="../js//time.js?<?php echo time(); ?>"></script>
+<script src="../js//edit_profile_js.js"></script>
 
 
 </html>

@@ -20,56 +20,56 @@ if (isset($_GET['verification'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    
+
     <link rel="stylesheet" href="./css/trial.css">
     <title>Login Page </title>
 </head>
 
 <body>
 
-<?php echo $msg; ?>
-<div class="my-2 toast-container position-fixed top-0 start-50 translate-middle-x" id="login-message"></div>
+    <?php echo $msg; ?>
+    <div class="my-2 toast-container position-fixed top-0 start-50 translate-middle-x" id="login-message"></div>
 
 
     <div class="container" id="container">
-       
-    
-            <form id="login-form">
+
+
+        <form id="login-form">
 
             <div class="image">
-                    <img src="logo.jpg" class="img-fluid" alt="Phone image" >
+                <img src="logo.jpg" class="img-fluid" alt="Phone image">
             </div>
 
-                <h1>LOGIN</h1>
-               
-              
-                <input type="text" id="uname" class="form-control form-control-lg py-3" name="username"
-                                autocomplete="off" placeholder="Username" style="border-radius:25px ;" />
+            <h1>LOGIN</h1>
 
-               <input type="password" id="password" class="form-control form-control-lg py-3"
-                                name="password" autocomplete="off" placeholder="Password"
-                                style="border-radius:25px ;"/>
 
+            <input type="text" id="uname" class="form-control form-control-lg py-3" name="username" autocomplete="off"
+                placeholder="Username" style="border-radius:25px ;" />
+
+            <input type="password" id="password" class="form-control form-control-lg py-3" name="password"
+                autocomplete="off" placeholder="Password" style="border-radius: 25px;" />
 
 
 
 
-                <a href="forgot_password.php"><u>Forgot Your Password?</u></a>
-                <button type="submit" name="login" id="form-login-btn">Sign In</button>
-                 <br></br>
-                <p style="text-align:center;"> Don't have an account? <a href="register.php" class="text-warning"
-                            style="font-weight:600;text-decoration:none;"><u>Register Here</u></a></p>
-            </form>
-        </div>
-       
+
+            <a href="forgot_password.php"><u>Forgot Your Password?</u></a>
+            <button type="submit" name="login" id="form-login-btn">Sign In</button>
+            <br></br>
+            <p style="text-align:center;"> Don't have an account? <a href="register.php" class="text-warning"
+                    style="font-weight:600;text-decoration:none;"><u>Register Here</u></a></p>
+        </form>
     </div>
 
-   <!-- Bootstrap JavaScript Libraries -->
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
         </script>
 

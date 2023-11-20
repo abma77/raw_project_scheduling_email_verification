@@ -1,54 +1,86 @@
 body {
 
-  
+
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-   
-}.container-fluid{
-    
+
+}
+
+.container-fluid {
+
     display: flex;
     justify-content: center;
     margin-top: 8%;
     border-radius: 15px;
 
-    
-}.card-body{
-  
-   background-color: #fff;
+}
+
+.card-body {
+
+    background-color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}.card-header{
+}
+
+.card-header {
 
     margin: 0%;
 }
+
 .alert {
-   
+
     position: relative;
     margin-left: 50%;
 
+}
 
+.buttons {
 
-
-
-}.buttons{
-
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 
 }
 
-@media screen and (max-width: 900px){
-
-
-    .row{
-  align-items: center;
-  
-
+.password-toggle {
+    position: relative;
 }
-.container-fluid{
-    margin: 0%;
-}.buttons{
-   
-    text-align: center;
+
+.password-toggle .toggle-icon {
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
+
+.password-toggle .toggle-icon i {
+    font-size: 18px;
+}
+
+.password-toggle .toggle-icon.show-password i.fa-eye-slash {
+    display: none;
+}
+
+.password-toggle .toggle-icon.hide-password i.fa-eye {
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+
+
+    .row {
+        align-items: center;
+
+
+    }
+
+    .container-fluid {
+        margin: 0%;
+    }
+
+    .buttons {
+
+        text-align: center;
+    }
 }

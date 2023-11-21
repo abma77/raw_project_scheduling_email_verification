@@ -81,7 +81,7 @@
                                     FROM room
                                 ");
                                 $retrieve_rooms->execute([]);
-
+                                
                                 echo '
                                     <option value="">Select Room</option>
                                 ';
@@ -90,12 +90,11 @@
                                         echo '
                                             <option value="'.$row["schedule_room"].'" selected>'.$row["schedule_room"].'</option>
                                         ';
-                                     }
-                                    //  else{
-                                    //     echo '
-                                    //         <option value="'.$retrieve_rooms["room_name"].'" selected>'.$retrieve_rooms["room_name"].'</option>
-                                    //     ';
-                                    // }
+                                    }else{
+                                        echo '
+                                            <option value="'.$rooms["room_name"].'">'.$rooms["room_name"].'</option>
+                                        ';
+                                    }
                                 }
                             ?> </select>
                         </div>

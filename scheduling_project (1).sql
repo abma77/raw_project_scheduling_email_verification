@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 06:14 AM
+-- Generation Time: Nov 21, 2023 at 06:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -103,10 +103,10 @@ CREATE TABLE `logs` (
 
 CREATE TABLE `room` (
   `room_id` int(11) NOT NULL,
-  `room_name` varchar(255) NOT NULL,
-  `room_building` varchar(255) NOT NULL,
+  `room_name` text NOT NULL,
+  `room_building` text NOT NULL,
   `room_capacity` int(11) NOT NULL,
-  `room_room_type` varchar(255) NOT NULL
+  `room_room_type` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -345,13 +345,13 @@ INSERT INTO `room` (`room_id`, `room_name`, `room_building`, `room_capacity`, `r
 
 CREATE TABLE `schedule` (
   `schedule_id` int(11) NOT NULL,
-  `schedule_semester` varchar(255) NOT NULL,
-  `schedule_school_year` varchar(255) NOT NULL,
-  `schedule_room` varchar(255) NOT NULL,
-  `schedule_section` varchar(255) NOT NULL,
-  `schedule_week_day` varchar(255) NOT NULL,
-  `schedule_teacher` varchar(255) NOT NULL,
-  `schedule_subject` varchar(255) NOT NULL,
+  `schedule_semester` text NOT NULL,
+  `schedule_school_year` text NOT NULL,
+  `schedule_room` text NOT NULL,
+  `schedule_section` text NOT NULL,
+  `schedule_week_day` text NOT NULL,
+  `schedule_teacher` text NOT NULL,
+  `schedule_subject` text NOT NULL,
   `schedule_start_time` time NOT NULL,
   `schedule_end_time` time NOT NULL,
   `schedule_rowspan` int(100) NOT NULL
@@ -5001,7 +5001,6 @@ INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_yea
 (4626, '1st Semester', '2023 - 2024', 'Old Dorm 1.', 'BSIT 4A N-23', 'Saturday', 'dela Cerna, Wilfredo', '1194', '18:00:00', '21:00:00', 6),
 (4627, '1st Semester', '2023 - 2024', '', 'BSIT 4A N-23', 'Sunday', 'dela Cerna, Wilfredo', '1194', '00:00:00', '00:00:00', 0),
 (4628, '1st Semester', '2023 - 2024', '', 'BSIT 4A N-23', 'Monday', 'Capuyan, Jover Isoto', '1190', '00:00:00', '00:00:00', 0),
-(4629, '1st Semester', '2023 - 2024', 'CE LAB', 'BSIT 4A N-23', 'Tuesday', 'Capuyan, Jover Isoto', '1190', '18:30:00', '21:30:00', 6),
 (4630, '1st Semester', '2023 - 2024', 'CE LAB', 'BSIT 4A N-23', 'Wednesday', 'Capuyan, Jover Isoto', '1190', '18:30:00', '21:30:00', 6),
 (4631, '1st Semester', '2023 - 2024', 'CE LAB', 'BSIT 4A N-23', 'Thursday', 'Capuyan, Jover Isoto', '1190', '18:30:00', '21:30:00', 6),
 (4632, '1st Semester', '2023 - 2024', '', 'BSIT 4A N-23', 'Friday', 'Capuyan, Jover Isoto', '1190', '00:00:00', '00:00:00', 0),
@@ -5060,9 +5059,9 @@ INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_yea
 (4685, '1st Semester', '2023 - 2024', '', 'BSMX 2B-23', 'Tuesday', 'Salvia Jr., Ademar B.', '895', '00:00:00', '00:00:00', 0),
 (4686, '1st Semester', '2023 - 2024', 'COE Rm. 3', 'BSMX 2B-23', 'Wednesday', 'Salvia Jr., Ademar B.', '895', '15:00:00', '16:30:00', 3),
 (4687, '1st Semester', '2023 - 2024', '', 'BSMX 2B-23', 'Thursday', 'Salvia Jr., Ademar B.', '895', '00:00:00', '00:00:00', 0),
-(4688, '1st Semester', '2023 - 2024', '', 'BSMX 2B-23', 'Friday', 'Salvia Jr., Ademar B.', '895', '00:00:00', '00:00:00', 0);
+(4688, '1st Semester', '2023 - 2024', '', 'BSMX 2B-23', 'Friday', 'Salvia Jr., Ademar B.', '895', '00:00:00', '00:00:00', 0),
+(4689, '1st Semester', '2023 - 2024', '', 'BSMX 2B-23', 'Saturday', 'Salvia Jr., Ademar B.', '895', '00:00:00', '00:00:00', 0);
 INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_year`, `schedule_room`, `schedule_section`, `schedule_week_day`, `schedule_teacher`, `schedule_subject`, `schedule_start_time`, `schedule_end_time`, `schedule_rowspan`) VALUES
-(4689, '1st Semester', '2023 - 2024', '', 'BSMX 2B-23', 'Saturday', 'Salvia Jr., Ademar B.', '895', '00:00:00', '00:00:00', 0),
 (4690, '1st Semester', '2023 - 2024', '', 'BSMX 2B-23', 'Sunday', 'Salvia Jr., Ademar B.', '895', '00:00:00', '00:00:00', 0),
 (4691, '1st Semester', '2023 - 2024', '', 'BSMX 3A-23', 'Monday', 'Salvia Jr., Ademar B.', '1185', '00:00:00', '00:00:00', 0),
 (4692, '1st Semester', '2023 - 2024', '', 'BSMX 3A-23', 'Tuesday', 'Salvia Jr., Ademar B.', '1185', '00:00:00', '00:00:00', 0),
@@ -5457,9 +5456,9 @@ INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_yea
 (5081, '1st Semester', '2023 - 2024', '', 'BIT 2H-23', 'Saturday', 'Castro, Angelo', '1173', '00:00:00', '00:00:00', 0),
 (5082, '1st Semester', '2023 - 2024', '', 'BIT 2H-23', 'Sunday', 'Castro, Angelo', '1173', '00:00:00', '00:00:00', 0),
 (5083, '1st Semester', '2023 - 2024', 'Rm. 24B', 'BSIT 2B-23', 'Monday', 'Durias, Ariel', '24', '07:00:00', '09:00:00', 4),
-(5084, '1st Semester', '2023 - 2024', '', 'BSIT 2B-23', 'Tuesday', 'Durias, Ariel', '24', '00:00:00', '00:00:00', 0);
+(5084, '1st Semester', '2023 - 2024', '', 'BSIT 2B-23', 'Tuesday', 'Durias, Ariel', '24', '00:00:00', '00:00:00', 0),
+(5085, '1st Semester', '2023 - 2024', '', 'BSIT 2B-23', 'Wednesday', 'Durias, Ariel', '24', '00:00:00', '00:00:00', 0);
 INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_year`, `schedule_room`, `schedule_section`, `schedule_week_day`, `schedule_teacher`, `schedule_subject`, `schedule_start_time`, `schedule_end_time`, `schedule_rowspan`) VALUES
-(5085, '1st Semester', '2023 - 2024', '', 'BSIT 2B-23', 'Wednesday', 'Durias, Ariel', '24', '00:00:00', '00:00:00', 0),
 (5086, '1st Semester', '2023 - 2024', 'Rm. 24B', 'BSIT 2B-23', 'Thursday', 'Durias, Ariel', '24', '11:00:00', '12:00:00', 2),
 (5087, '1st Semester', '2023 - 2024', '', 'BSIT 2B-23', 'Friday', 'Durias, Ariel', '24', '00:00:00', '00:00:00', 0),
 (5088, '1st Semester', '2023 - 2024', '', 'BSIT 2B-23', 'Saturday', 'Durias, Ariel', '24', '00:00:00', '00:00:00', 0),
@@ -5855,9 +5854,9 @@ INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_yea
 (5478, '1st Semester', '2023 - 2024', 'COE Rm. 4', 'BIT 1E-23', 'Thursday', 'Valiente, Concepcion M.', '34', '14:30:00', '16:00:00', 3),
 (5479, '1st Semester', '2023 - 2024', '', 'BIT 1E-23', 'Friday', 'Valiente, Concepcion M.', '34', '00:00:00', '00:00:00', 0),
 (5480, '1st Semester', '2023 - 2024', '', 'BIT 1E-23', 'Saturday', 'Valiente, Concepcion M.', '34', '00:00:00', '00:00:00', 0),
-(5481, '1st Semester', '2023 - 2024', '', 'BIT 1E-23', 'Sunday', 'Valiente, Concepcion M.', '34', '00:00:00', '00:00:00', 0);
+(5481, '1st Semester', '2023 - 2024', '', 'BIT 1E-23', 'Sunday', 'Valiente, Concepcion M.', '34', '00:00:00', '00:00:00', 0),
+(5482, '1st Semester', '2023 - 2024', 'TBA CME 5', 'BIT 1F-23', 'Monday', 'Valiente, Concepcion M.', '34', '10:00:00', '11:00:00', 2);
 INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_year`, `schedule_room`, `schedule_section`, `schedule_week_day`, `schedule_teacher`, `schedule_subject`, `schedule_start_time`, `schedule_end_time`, `schedule_rowspan`) VALUES
-(5482, '1st Semester', '2023 - 2024', 'TBA CME 5', 'BIT 1F-23', 'Monday', 'Valiente, Concepcion M.', '34', '10:00:00', '11:00:00', 2),
 (5483, '1st Semester', '2023 - 2024', '', 'BIT 1F-23', 'Tuesday', 'Valiente, Concepcion M.', '34', '00:00:00', '00:00:00', 0),
 (5484, '1st Semester', '2023 - 2024', 'TBA CME 5', 'BIT 1F-23', 'Wednesday', 'Valiente, Concepcion M.', '34', '10:00:00', '11:00:00', 2),
 (5485, '1st Semester', '2023 - 2024', '', 'BIT 1F-23', 'Thursday', 'Valiente, Concepcion M.', '34', '00:00:00', '00:00:00', 0),
@@ -6129,7 +6128,11 @@ INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_yea
 (5751, '1st Semester', '2023 - 2024', '', 'BIT 3F N-23', 'Thursday', 'Casas, Mary Therese', '70', '00:00:00', '00:00:00', 0),
 (5752, '1st Semester', '2023 - 2024', '', 'BIT 3F N-23', 'Friday', 'Casas, Mary Therese', '70', '00:00:00', '00:00:00', 0),
 (5753, '1st Semester', '2023 - 2024', 'Rm. 25', 'BIT 3F N-23', 'Saturday', 'Casas, Mary Therese', '70', '09:00:00', '12:00:00', 6),
-(5754, '1st Semester', '2023 - 2024', '', 'BIT 3F N-23', 'Sunday', 'Casas, Mary Therese', '70', '00:00:00', '00:00:00', 0);
+(5754, '1st Semester', '2023 - 2024', '', 'BIT 3F N-23', 'Sunday', 'Casas, Mary Therese', '70', '00:00:00', '00:00:00', 0),
+(367609, '2nd Semester', '2023 - 2024', 'Comp Lab 201', 'BSIT 1A-23', 'Monday', 'Arnold N. Batac', '780', '07:30:00', '10:30:00', 6),
+(367610, '2nd Semester', '2023 - 2024', 'Comp Lab 201', 'BSIT 1A-23', 'Tuesday', 'Arnold N. Batac', '780', '07:30:00', '10:30:00', 6),
+(367611, '2nd Semester', '2023 - 2024', 'Comp Lab 201', 'BSIT 3A N-23', 'Monday', 'Jover Isoto Capuyan', '1121', '19:30:00', '21:30:00', 4),
+(367612, '1st Semester', '2023 - 2024', 'COED Rm. 301', 'BSIT 4A N-23', 'Tuesday', 'Capuyan, Jover Isoto', '1189', '18:30:00', '21:30:00', 6);
 
 -- --------------------------------------------------------
 
@@ -6139,8 +6142,8 @@ INSERT INTO `schedule` (`schedule_id`, `schedule_semester`, `schedule_school_yea
 
 CREATE TABLE `school_a_y` (
   `ay_id` int(11) NOT NULL,
-  `ay_year` varchar(255) NOT NULL,
-  `ay_semester` varchar(255) NOT NULL
+  `ay_year` text NOT NULL,
+  `ay_semester` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -6161,9 +6164,9 @@ INSERT INTO `school_a_y` (`ay_id`, `ay_year`, `ay_semester`) VALUES
 
 CREATE TABLE `section` (
   `section_id` int(11) NOT NULL,
-  `section_name` varchar(255) NOT NULL,
-  `section_program` varchar(255) NOT NULL,
-  `section_major` varchar(255) NOT NULL
+  `section_name` text NOT NULL,
+  `section_program` text NOT NULL,
+  `section_major` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -6322,8 +6325,8 @@ INSERT INTO `section` (`section_id`, `section_name`, `section_program`, `section
 CREATE TABLE `section_detail` (
   `section_detail_id` int(11) NOT NULL,
   `section_detail_section_id` int(11) NOT NULL,
-  `section_detail_semester` varchar(255) NOT NULL,
-  `section_detail_school_year` varchar(255) NOT NULL
+  `section_detail_semester` text NOT NULL,
+  `section_detail_school_year` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -6471,7 +6474,12 @@ INSERT INTO `section_detail` (`section_detail_id`, `section_detail_section_id`, 
 (138, 1161, '2nd Semester', '2023 - 2024'),
 (139, 1162, '2nd Semester', '2023 - 2024'),
 (140, 1163, '2nd Semester', '2023 - 2024'),
-(141, 1164, '2nd Semester', '2023 - 2024');
+(141, 1164, '2nd Semester', '2023 - 2024'),
+(142, 1019, '2nd Semester', '2023 - 2024'),
+(143, 1020, '2nd Semester', '2023 - 2024'),
+(144, 1128, '2nd Semester', '2023 - 2024'),
+(145, 1131, '2nd Semester', '2023 - 2024'),
+(146, 1132, '2nd Semester', '2023 - 2024');
 
 -- --------------------------------------------------------
 
@@ -6482,14 +6490,14 @@ INSERT INTO `section_detail` (`section_detail_id`, `section_detail_section_id`, 
 CREATE TABLE `student` (
   `student_id` int(11) NOT NULL,
   `student_id_number` int(100) NOT NULL,
-  `student_firstname` varchar(255) NOT NULL,
-  `student_middlename` varchar(255) NOT NULL,
-  `student_lastname` varchar(255) NOT NULL,
-  `student_fullname` varchar(255) NOT NULL,
-  `student_course` varchar(255) NOT NULL,
-  `student_year` varchar(255) NOT NULL,
-  `student_section` varchar(255) NOT NULL,
-  `student_status` varchar(255) NOT NULL
+  `student_firstname` text NOT NULL,
+  `student_middlename` text NOT NULL,
+  `student_lastname` text NOT NULL,
+  `student_fullname` text NOT NULL,
+  `student_course` text NOT NULL,
+  `student_year` text NOT NULL,
+  `student_section` text NOT NULL,
+  `student_status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -6497,8 +6505,10 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`student_id`, `student_id_number`, `student_firstname`, `student_middlename`, `student_lastname`, `student_fullname`, `student_course`, `student_year`, `student_section`, `student_status`) VALUES
+(3, 3200189, 'PoKieMane', '', 'Magsaysay', 'Pokiemane Magsaysay', 'BSIT', '4', 'BSIT 4A N-23', 'Regular'),
 (13, 114312, 'juan', 'jhgjkgkjh', 'gjkjlhl', '', 'BSIT', '4', 'BSIT 4A - Night', 'Regular'),
-(18, 3200739, 'Argie Benedict', 'Mirafuentes', 'Abuloc', 'Abuloc, Argie Benedict', 'BSIT', '4', 'BSIT 4A N-23', 'Regular');
+(18, 3200739, 'Argie Benedict', 'Mirafuentes', 'Abuloc', 'Abuloc, Argie Benedict Mirafuentes', 'BSIT', '4', 'BSIT 4A N-23', 'Regular'),
+(19, 300012, 'Sage', 'Leah Todd', 'Alexander', 'Alexander, Sage', 'BIT', '4', 'BSIT 4A N-23', 'Regular');
 
 -- --------------------------------------------------------
 
@@ -6521,8 +6531,8 @@ CREATE TABLE `student_detail` (
 
 CREATE TABLE `subject` (
   `subject_id` int(11) NOT NULL,
-  `subject_name` varchar(255) NOT NULL,
-  `subject_title` varchar(255) NOT NULL,
+  `subject_name` text NOT NULL,
+  `subject_title` text NOT NULL,
   `subject_unit` int(100) NOT NULL,
   `subject_lecture_hour` int(100) NOT NULL,
   `subject_laboratory_hour` int(100) NOT NULL
@@ -6685,9 +6695,9 @@ INSERT INTO `subject` (`subject_id`, `subject_name`, `subject_title`, `subject_u
 
 CREATE TABLE `subject_detail` (
   `subject_detail_id` int(11) NOT NULL,
-  `subject_detail_semester` varchar(255) NOT NULL,
-  `subject_detail_school_year` varchar(255) NOT NULL,
-  `subject_detail_teacher_fullname` varchar(255) NOT NULL,
+  `subject_detail_semester` text NOT NULL,
+  `subject_detail_school_year` text NOT NULL,
+  `subject_detail_teacher_fullname` text NOT NULL,
   `subject_detail_subject_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -7521,7 +7531,12 @@ INSERT INTO `subject_detail` (`subject_detail_id`, `subject_detail_semester`, `s
 (13024, '1st Semester', '2023 - 2024', 'Casas, Mary Therese', 70),
 (13025, '1st Semester', '2023 - 2024', 'Casas, Mary Therese', 70),
 (13026, 'TL_Sem', 'TL_AY', 'TL_TeacherName', 0),
-(13027, 'TL_Sem', 'TL_AY', 'TL_TeacherName', 0);
+(13027, 'TL_Sem', 'TL_AY', 'TL_TeacherName', 0),
+(13028, '2nd Semester', '2023 - 2024', 'Arnold N. Batac', 780),
+(13029, '2nd Semester', '2023 - 2024', 'Arnold N. Batac', 781),
+(13030, '2nd Semester', '2023 - 2024', 'Jover Isoto Capuyan', 1121),
+(13031, '2nd Semester', '2023 - 2024', 'Jover Isoto Capuyan', 1122),
+(13032, '2nd Semester', '2023 - 2024', 'Jover Isoto Capuyan', 1123);
 
 -- --------------------------------------------------------
 
@@ -7532,22 +7547,22 @@ INSERT INTO `subject_detail` (`subject_detail_id`, `subject_detail_semester`, `s
 CREATE TABLE `teacher` (
   `teacher_id` int(11) NOT NULL,
   `teacher_id_number` int(100) NOT NULL,
-  `teacher_lastname` varchar(255) NOT NULL,
-  `teacher_firstname` varchar(255) NOT NULL,
-  `teacher_middlename` varchar(255) NOT NULL,
-  `teacher_fullname` varchar(255) NOT NULL,
-  `teacher_bachelor` varchar(255) NOT NULL,
-  `teacher_master` varchar(255) NOT NULL,
-  `teacher_doctor` varchar(255) NOT NULL,
-  `teacher_special` varchar(255) NOT NULL,
-  `teacher_major` varchar(255) NOT NULL,
-  `teacher_minor` varchar(255) NOT NULL,
-  `teacher_designation` varchar(255) NOT NULL,
-  `teacher_status` varchar(255) NOT NULL,
-  `teacher_research` varchar(255) NOT NULL,
-  `teacher_production` varchar(255) NOT NULL,
-  `teacher_extension` varchar(255) NOT NULL,
-  `teacher_others` varchar(255) NOT NULL
+  `teacher_lastname` text NOT NULL,
+  `teacher_firstname` text NOT NULL,
+  `teacher_middlename` text NOT NULL,
+  `teacher_fullname` text NOT NULL,
+  `teacher_bachelor` text NOT NULL,
+  `teacher_master` text NOT NULL,
+  `teacher_doctor` text NOT NULL,
+  `teacher_special` text NOT NULL,
+  `teacher_major` text NOT NULL,
+  `teacher_minor` text NOT NULL,
+  `teacher_designation` text NOT NULL,
+  `teacher_status` text NOT NULL,
+  `teacher_research` text NOT NULL,
+  `teacher_production` text NOT NULL,
+  `teacher_extension` text NOT NULL,
+  `teacher_others` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -7665,7 +7680,8 @@ INSERT INTO `teacher` (`teacher_id`, `teacher_id_number`, `teacher_lastname`, `t
 (509, 30783, 'Giangan', 'Jeremias', '', 'Giangan, Jeremias ', 'BSED', 'M. Ed. Sped', 'Dev. Ed. D.', '', '', '', '', '', '', '', '', ''),
 (510, 30748, 'Bataluna', 'Jhune Clear', 'B', 'Bataluna, Jhune Clear B', 'MSIT (Ongoing)', '', '', '', '', '', '', '', '', '', '', ''),
 (511, 30785, 'Gonzales', 'Robert', 'B', 'Gonzales, Robert B', 'BSIT', 'MSIT (Ongoing)', '', '', 'Electronics', '', '', 'Part-time', '', '', '', ''),
-(512, 30926, 'Vasquez', 'Jela Marivy', 'H', 'Vasquez, Jela Marivy H', 'BSED', '', '', '', 'Science', '', '', 'Part-time', '', '', '', '');
+(512, 30926, 'Vasquez', 'Jela Marivy', 'H', 'Vasquez, Jela Marivy H', 'BSED', '', '', '', 'Science', '', '', 'Part-time', '', '', '', ''),
+(542, 52643123, 'Abuloc', 'Argie Benedict', 'Mirafuentes', '', 'Bachelor of Science in Information Technology', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'Organic', 'N/A', 'N/A', 'N/A', 'N/A');
 
 -- --------------------------------------------------------
 
@@ -7675,9 +7691,9 @@ INSERT INTO `teacher` (`teacher_id`, `teacher_id_number`, `teacher_lastname`, `t
 
 CREATE TABLE `teacher_detail` (
   `teacher_detail_id` int(11) NOT NULL,
-  `teacher_fullname` varchar(255) NOT NULL,
-  `teacher_semester` varchar(255) NOT NULL,
-  `teacher_school_year` varchar(255) NOT NULL
+  `teacher_fullname` text NOT NULL,
+  `teacher_semester` text NOT NULL,
+  `teacher_school_year` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -8291,7 +8307,13 @@ INSERT INTO `teacher_detail` (`teacher_detail_id`, `teacher_fullname`, `teacher_
 (12364, 'Gonzales, Robert B', '1st Semester', '2023 - 2024'),
 (12365, 'Gonzales, Robert B', '1st Semester', '2023 - 2024'),
 (12374, 'Casas, Mary Therese', '1st Semester', '2023 - 2024'),
-(12375, 'Casas, Mary Therese', '1st Semester', '2023 - 2024');
+(12375, 'Casas, Mary Therese', '1st Semester', '2023 - 2024'),
+(12376, 'Arnold N. Batac', '2nd Semester', '2022 - 2023'),
+(12377, 'Frashel Clark A. Pepito', '2nd Semester', '2022 - 2023'),
+(12378, 'Arnold N. Batac', '2nd Semester', '2023 - 2024'),
+(12379, 'Frashel Clark A. Pepito', '2nd Semester', '2023 - 2024'),
+(12380, 'Jover Isoto Capuyan', '1st Semester', '2023 - 2024'),
+(12381, 'Jover Isoto Capuyan', '2nd Semester', '2023 - 2024');
 
 -- --------------------------------------------------------
 
@@ -8301,14 +8323,14 @@ INSERT INTO `teacher_detail` (`teacher_detail_id`, `teacher_fullname`, `teacher_
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `user_username` varchar(255) NOT NULL,
-  `user_password` varchar(255) NOT NULL,
-  `user_fullname` varchar(255) NOT NULL,
-  `user_contact` int(100) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
+  `user_username` text NOT NULL,
+  `user_password` text NOT NULL,
+  `user_fullname` text NOT NULL,
+  `user_contact` text NOT NULL,
+  `user_email` text NOT NULL,
   `user_email_verified` text NOT NULL,
-  `user_type` varchar(255) NOT NULL,
-  `user_address` varchar(255) NOT NULL,
+  `user_type` text NOT NULL,
+  `user_address` text NOT NULL,
   `user_id_number` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -8317,119 +8339,120 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_username`, `user_password`, `user_fullname`, `user_contact`, `user_email`, `user_email_verified`, `user_type`, `user_address`, `user_id_number`) VALUES
-(1, 'Arnold', 'batac12345', 'Batac, Arnold N.', 0, '', '', 'Teacher', 'Cebu City', 0),
-(3, 'PoKieMane', 'student123', 'PokieMane', 984654156, '', '', 'Student', 'Tilhaong', 0),
-(12, 'Frashel', 'pepito456', 'Pepito, Frashel Clark A.', 0, '', '', 'Teacher', '', 9),
-(17, 'Joel', 'durante789', 'Durante, Joel A.', 0, '', '', 'Teacher', '', 14),
-(30, 'Roel', 'vasquez147', 'Vasquez, Roel L.', 0, '', '', 'Teacher', '', 0),
-(33, 'Rizalde', 'valencia258', 'Valencia, Rizalde C.', 0, '', '', 'Teacher', '', 0),
-(42, 'Alvin', 'tampos369', 'Tampos, Alvin Momo', 0, '', '', 'Teacher', '', 0),
-(46, 'Lutrago', 'somblingo159', 'Somblingo, Lutgardo A.', 0, '', '', 'Teacher', '', 0),
-(49, 'Roberto', 'rodriguez357', 'Rodriguez, Roberto', 0, '', '', 'Teacher', '', 0),
-(51, 'Jufiel', 'reuyan951', 'Reuyan, Jufiel', 0, '', '', 'Teacher', '', 0),
-(53, 'Christeodoflor', 'ramos753', 'Ramos, Christeodoflor A.', 0, '', '', 'Teacher', '', 0),
-(64, 'Lesley', 'penera321', 'Penera, Lesley Karren B.', 0, '', '', 'Teacher', '', 0),
-(66, 'Rey', 'pekitpekit654', 'Pekitpekit, Rey S.', 0, '', '', 'Teacher', '', 0),
-(89, 'Carlos', 'medalle987', 'Medalle, Jose Carlos Y.', 0, '', '', 'Teacher', '', 0),
-(96, 'Diana', 'marquez741', 'Marquez, Diana Irene', 0, '', '', 'Teacher', '', 0),
-(97, 'Vevica', 'maranan852', 'Maranan, Ma. Vevica P.', 0, '', '', 'Teacher', '', 0),
-(102, 'Ryan', 'mahilum963', 'Mahilum, Ryan M.', 0, '', '', 'Teacher', '', 0),
-(109, 'Agnes', 'lawas159', 'Lawas, Agnes', 0, '', '', 'Teacher', '', 0),
-(114, 'Ronnel', 'kilat123', 'Kilat, Ronnel Victor B.', 0, '', '', 'Teacher', '', 30815),
-(115, 'Deogracias', 'juntilla456', 'Juntilla, Deogracias', 0, '', '', 'Teacher', '', 0),
-(116, 'Brian', 'jungco789', 'Jungco, Jose Brian P.', 0, '', '', 'Teacher', '', 0),
-(122, 'Victor', 'hermosilla321', 'Hermosilla, Victor', 0, '', '', 'Teacher', '', 0),
-(125, 'Edralin', 'general654', 'General, Edralin A.', 0, '', '', 'Teacher', '', 0),
-(126, 'Jake', 'garcia987', 'Garcia, Jake Stephen', 0, '', '', 'Teacher', '', 0),
-(127, 'Ricardo', 'garbo159', 'Garbo, Ricardo S.', 0, '', '', 'Teacher', '', 0),
-(141, 'Marsan', 'dua357', 'Dua, Marsan P.', 0, '', '', 'Teacher', '', 0),
-(147, 'Garry', 'delacerna753', 'Dela Cerna, Garry L.', 0, '', '', 'Teacher', '', 0),
-(152, 'Rowena', 'condevillamar951', 'Condevillamar, Rowena R.', 0, '', '', 'Teacher', '', 0),
-(157, 'Sarah', 'colina123', 'Colina, Sarah Jane A.', 0, '', '', 'Teacher', '', 0),
-(171, 'Amadito', 'buot321', 'Buot, Amadito Jr. P.', 0, '', '', 'Teacher', '', 0),
-(173, 'Guilbert', 'bontia456', 'Bontia, Guilbert', 0, '', '', 'Teacher', '', 0),
-(175, 'Mark', 'bernardo654', 'Bernardo, Mark Joseph C.', 0, '', '', 'Teacher', '', 0),
-(176, 'Marchel', 'bentoy789', 'Bentoy, Marchel L.', 0, '', '', 'Teacher', '', 0),
-(178, 'Romelito', 'bayno987', 'Bayno, Romelito Jr. N.', 0, '', '', 'Teacher', '', 0),
-(188, 'Denilin', 'avila159', 'Avila, Denilin B.', 0, '', '', 'Teacher', '', 0),
-(190, 'Floreto', 'armecin951', 'Armecin, Floreto', 0, '', '', 'Teacher', '', 0),
-(195, 'Gerly', 'angtiampo357', 'Angtiampo, Gerly J.', 0, '', '', 'Teacher', '', 0),
-(197, 'Jan', 'almerez321', 'Almerez, Jan Vianney', 0, '', '', 'Teacher', '', 0),
-(198, 'Leoniel', 'almendras123', 'Almendras, Leoniel H.', 0, '', '', 'Teacher', '', 0),
-(203, 'Romeo', 'aldenese654', 'Aldenese, Romeo P.', 0, '', '', 'Teacher', '', 0),
-(207, 'Jinky', 'aliasot456', 'Aliasot, Jinky L.', 0, '', '', 'Teacher', '', 0),
-(215, 'Junry', 'monterola987', 'Monterola, Junry T.', 0, '', '', 'Teacher', '', 0),
-(221, 'Carlo', 'singson789', 'Singson, Carlo N.', 0, '', '', 'Teacher', '', 0),
-(231, 'Emmanuel', 'paradiang753', 'Paradiang, Emmanuel T.', 0, '', '', 'Teacher', '', 0),
-(239, 'Felix', 'paradiang357', 'Paradiang, Felix', 0, '', '', 'Teacher', '', 0),
-(242, 'Joseph1', 'racaza951', 'Racaza, Joseph', 0, '', '', 'Teacher', '', 0),
-(290, 'Jose', 'juntilla159', 'Juntilla, Jose Leo', 0, '', '', 'Teacher', '', 30063),
-(291, 'Joelmar', 'enriquez147', 'Enriquez, Joelmar', 0, '', '', 'Teacher', '', 0),
-(294, 'Jenivie', 'ormoc741', 'Ormoc, Jenivie H.', 0, '', '', 'Teacher', '', 0),
-(298, 'Chito', 'luang258', 'Luang, Chito', 0, '', '', 'Teacher', '', 0),
-(300, 'Glenard', 'sarmiento852', 'Sarmiento, Glenard D.', 0, '', '', 'Teacher', '', 0),
-(301, 'Maria', 'rio369', 'Rio, Maria Ni? Jesusa F.', 0, '', '', 'Teacher', '', 0),
-(308, 'Ker', 'rodriguez963', 'Rodriguez, Ker Jay R.', 0, '', '', 'Teacher', '', 0),
-(310, 'Joseph2', 'castro159', 'Castro, Joseph Rey T.', 0, '', '', 'Teacher', '', 0),
-(313, 'Aillen', 'abelita951', 'Abelita, Aillen Joyce D.', 0, '', '', 'Teacher', '', 0),
-(317, 'Christian', 'manipis357', 'Manipis, Christian M.', 0, '', '', 'Teacher', '', 0),
-(319, 'Annalyn', 'rosell753', 'Rosell, Annalyn P.', 0, '', '', 'Teacher', '', 0),
-(353, 'Catherine', 'terana45', 'Terana, Catherine C.', 0, '', '', 'Teacher', '', 0),
-(354, 'John', 'juntilla56', 'Juntilla, John Neil A.', 0, '', '', 'Teacher', '', 0),
-(372, 'Adonis', 'rivera564', 'Rivera, Adonis', 0, '', '', 'Teacher', '', 0),
-(374, 'June', 'sinadhan213', 'Sinadhan, June Thomas Q.', 0, '', '', 'Teacher', '', 0),
-(382, 'Mary', 'cataraja2', 'Cataraja, Mary Grace D.', 0, '', '', 'Teacher', '', 0),
-(390, 'Ivene', 'laude789', 'Laude, Ivene C.', 0, '', '', 'Teacher', '', 0),
-(391, 'Edrian', 'robuca879', 'Robuca, Edrian M.', 0, '', '', 'Teacher', '', 0),
-(392, 'Kris', 'hermosilla89', 'Hermosilla, Alvin Kris B.', 0, '', '', 'Teacher', '', 0),
-(393, 'Vince', 'roa23', 'Roa, Vince Daniel', 0, '', '', 'Teacher', '', 0),
-(394, 'Jenier', 'tamundoc456', 'Tamundoc, Jenier T.', 0, '', '', 'Teacher', '', 0),
-(397, 'Richelle', 'uayan879', 'Uayan, Richelle Ann', 0, '', '', 'Teacher', '', 0),
-(410, 'Gil', 'gocon231', 'Goc-ong, Mark Gil C.', 0, '', '', 'Teacher', '', 0),
-(412, 'Hazel', 'lopez897', 'Lopez, Hazel T.', 0, '', '', 'Teacher', '', 0),
-(414, 'Marilyn', 'meca546', 'Meca, Marilyn D.', 0, '', '', 'Teacher', '', 0),
-(422, 'Dax', 'bariaan879', 'Bariaan, Michaed Dax G.', 0, '', '', 'Teacher', '', 0),
-(430, 'Ademar', 'salvia615', 'Salvia Jr., Ademar B.', 0, '', '', 'Teacher', '', 0),
-(447, 'Dianne', 'pongautan123', 'Pongautan, Dianne', 0, '', '', 'Teacher', '', 0),
-(458, 'Sergiane', 'dua789', 'Dua, Sergiane H.', 0, '', '', 'Teacher', '', 0),
-(460, 'Jeb', 'osabe0', 'Osabel, Mark Jeb B.', 0, '', '', 'Teacher', '', 0),
-(461, 'Jover', 'capuyan534', 'Capuyan, Jover Isoto', 0, '', '', 'Teacher', '', 0),
-(462, 'Kenneth', 'wen789', 'Wen, Kenneth', 0, '', '', 'Teacher', '', 0),
-(473, 'Raffy', 'rosal564', 'Rosal, Raffy', 0, '', '', 'Teacher', '', 0),
-(474, 'Angelo', 'castro879', 'Castro, Angelo', 0, '', '', 'Teacher', '', 0),
-(475, 'Marvin', 'castro546', 'Castro, Marvin', 0, '', '', 'Teacher', '', 0),
-(476, 'Elmery', 'papas231', 'Papas, Elmery Ry', 0, '', '', 'Teacher', '', 0),
-(478, 'Lou', 'batulan5646', 'Batulan, Mary Lou', 0, '', '', 'Teacher', '', 0),
-(479, 'Jill', 'capin231', 'Capin, Mary Jill', 0, '', '', 'Teacher', '', 0),
-(480, 'Rhea', 'cabatingan45', 'Cabatingan, Rhea', 0, '', '', 'Teacher', '', 0),
-(481, 'Jerome', 'quirante213', 'Quirante, Jerome', 0, '', '', 'Teacher', '', 0),
-(482, 'Wilfredo', 'delacerna231', 'Dela Cerna, Wilfredo', 0, '', '', 'Teacher', '', 0),
-(483, 'Grace', 'frigillana897', 'Frigillana, Mary Grace', 0, '', '', 'Teacher', '', 0),
-(485, 'Akari', 'pesta?s0241', 'Pesta?s, Akari', 0, '', '', 'Teacher', '', 0),
-(486, 'Alexander', 'casas897', 'Casas, Alexander', 0, '', '', 'Teacher', '', 0),
-(487, 'Naome', 'panta546', 'Panta, Naome', 0, '', '', 'Teacher', '', 0),
-(488, 'Marianito', 'montebon231', 'Montebon, Marianito', 0, '', '', 'Teacher', '', 0),
-(489, 'Therese', 'casas231', 'Casas, Mary Therese', 0, '', '', 'Teacher', '', 0),
-(490, 'Angelie', 'luardo5466', 'Luardo, Angelie', 0, '', '', 'Teacher', '', 0),
-(491, 'Lester', 'alcoseba879', 'Alcoseba, Lester', 0, '', '', 'Teacher', '', 0),
-(492, 'Rosita', 'gargantiel231', 'Gargantiel, Rosita', 0, '', '', 'Teacher', '', 0),
-(493, 'Arne', 'morales564', 'Morales, Arne Josephus', 0, '', '', 'Teacher', '', 0),
-(494, 'Ariel', 'durias879', 'Durias, Ariel', 0, '', '', 'Teacher', '', 0),
-(496, 'Chere', 'velasquez321', 'Velasquez, Chere', 0, '', '', 'Teacher', '', 0),
-(497, 'Chizza', 'barriga564', 'Barriga, Chizza Mei', 0, '', '', 'Teacher', '', 0),
-(498, 'Jeza', 'malubay789', 'Malubay, Jeza', 0, '', '', 'Teacher', '', 0),
-(500, 'Jean', 'guzon159', 'Guzon, Jean Grace', 0, '', '', 'Teacher', '', 0),
-(506, 'Kayze', 'capoy3', 'Capoy, Kayze Lyn', 0, '', '', 'Teacher', '', 0),
-(507, 'Conception', 'valiente174', 'Valiente, Conception M.', 0, '', '', 'Teacher', '', 0),
-(508, 'Rajanah', 'gorre285', 'Gorre, Ranajah Carmel M.', 0, '', '', 'Teacher', '', 0),
-(509, 'Jeremias', 'giangan9633', 'Giangan, Jeremias', 0, '', '', 'Teacher', '', 0),
-(510, 'Jhune', 'bataluna213', 'Bataluna, Jhune Clear B.', 0, '', '', 'Teacher', '', 0),
-(511, 'Robert', 'gonzales546', 'Gonzales, Robert B.', 0, '', '', 'Teacher', '', 0),
-(512, 'Jela', 'vasquez897', 'Vasquez, Jela H.', 0, '', '', '', '', 0),
-(999, 'abma77', 'abuloc060302', 'Argie Benedict Abuloc', 0, '', '', 'Admin', 'Consolacion', 0),
-(1002, 'Marites', 'bejoc5', 'Bejoc, Marites B.', 0, '', '', 'Teacher', '', 0),
-(1041, 'carlosmiguel123', 'carlosmiguel123', 'Bermejo, Carlos Miguel', 0, 'carlosmiguel.bermejo@ctu.edu.ph', '23', 'Admin', '', 0),
-(1047, 'argie12345', 'argie12345', 'Abuloc, Argie Benedict', 2147483647, 'argiebenedict.abuloc@ctu.edu.ph', '', 'Student', 'Consolacion', 3200739);
+(1, 'Arnold', 'batac12345', 'Batac, Arnold N.', '905456465', '', '', 'Teacher', 'Danao City', 0),
+(3, 'PoKieMane', 'student123', 'PokieMane Magsaysay', '984654156', '', '', 'Student', 'Tilhaong', 3200189),
+(12, 'Frashel', 'pepito456', 'Pepito, Frashel Clark A.', '0', '', '', 'Teacher', '', 9),
+(17, 'Joel', 'durante789', 'Durante, Joel A.', '0', '', '', 'Teacher', '', 14),
+(30, 'Roel', 'vasquez147', 'Vasquez, Roel L.', '0', '', '', 'Teacher', '', 0),
+(33, 'Rizalde', 'valencia258', 'Valencia, Rizalde C.', '0', '', '', 'Teacher', '', 0),
+(42, 'Alvin', 'tampos369', 'Tampos, Alvin Momo', '0', '', '', 'Teacher', '', 0),
+(46, 'Lutrago', 'somblingo159', 'Somblingo, Lutgardo A.', '0', '', '', 'Teacher', '', 0),
+(49, 'Roberto', 'rodriguez357', 'Rodriguez, Roberto', '0', '', '', 'Teacher', '', 0),
+(51, 'Jufiel', 'reuyan951', 'Reuyan, Jufiel', '0', '', '', 'Teacher', '', 0),
+(53, 'Christeodoflor', 'ramos753', 'Ramos, Christeodoflor A.', '0', '', '', 'Teacher', '', 0),
+(64, 'Lesley', 'penera321', 'Penera, Lesley Karren B.', '0', '', '', 'Teacher', '', 0),
+(66, 'Rey', 'pekitpekit654', 'Pekitpekit, Rey S.', '0', '', '', 'Teacher', '', 0),
+(89, 'Carlos', 'medalle987', 'Medalle, Jose Carlos Y.', '0', '', '', 'Teacher', '', 0),
+(96, 'Diana', 'marquez741', 'Marquez, Diana Irene', '0', '', '', 'Teacher', '', 0),
+(97, 'Vevica', 'maranan852', 'Maranan, Ma. Vevica P.', '0', '', '', 'Teacher', '', 0),
+(102, 'Ryan', 'mahilum963', 'Mahilum, Ryan M.', '0', '', '', 'Teacher', '', 0),
+(109, 'Agnes', 'lawas159', 'Lawas, Agnes', '0', '', '', 'Teacher', '', 0),
+(114, 'Ronnel', 'kilat123', 'Kilat, Ronnel Victor B.', '0', '', '', 'Teacher', '', 30815),
+(115, 'Deogracias', 'juntilla456', 'Juntilla, Deogracias', '0', '', '', 'Teacher', '', 0),
+(116, 'Brian', 'jungco789', 'Jungco, Jose Brian P.', '0', '', '', 'Teacher', '', 0),
+(122, 'Victor', 'hermosilla321', 'Hermosilla, Victor', '0', '', '', 'Teacher', '', 0),
+(125, 'Edralin', 'general654', 'General, Edralin A.', '0', '', '', 'Teacher', '', 0),
+(126, 'Jake', 'garcia987', 'Garcia, Jake Stephen', '0', '', '', 'Teacher', '', 0),
+(127, 'Ricardo', 'garbo159', 'Garbo, Ricardo S.', '0', '', '', 'Teacher', '', 0),
+(141, 'Marsan', 'dua357', 'Dua, Marsan P.', '0', '', '', 'Teacher', '', 0),
+(147, 'Garry', 'delacerna753', 'Dela Cerna, Garry L.', '0', '', '', 'Teacher', '', 0),
+(152, 'Rowena', 'condevillamar951', 'Condevillamar, Rowena R.', '0', '', '', 'Teacher', '', 0),
+(157, 'Sarah', 'colina123', 'Colina, Sarah Jane A.', '0', '', '', 'Teacher', '', 0),
+(171, 'Amadito', 'buot321', 'Buot, Amadito Jr. P.', '0', '', '', 'Teacher', '', 0),
+(173, 'Guilbert', 'bontia456', 'Bontia, Guilbert', '0', '', '', 'Teacher', '', 0),
+(175, 'Mark', 'bernardo654', 'Bernardo, Mark Joseph C.', '0', '', '', 'Teacher', '', 0),
+(176, 'Marchel', 'bentoy789', 'Bentoy, Marchel L.', '0', '', '', 'Teacher', '', 0),
+(178, 'Romelito', 'bayno987', 'Bayno, Romelito Jr. N.', '0', '', '', 'Teacher', '', 0),
+(188, 'Denilin', 'avila159', 'Avila, Denilin B.', '0', '', '', 'Teacher', '', 0),
+(190, 'Floreto', 'armecin951', 'Armecin, Floreto', '0', '', '', 'Teacher', '', 0),
+(195, 'Gerly', 'angtiampo357', 'Angtiampo, Gerly J.', '0', '', '', 'Teacher', '', 0),
+(197, 'Jan', 'almerez321', 'Almerez, Jan Vianney', '0', '', '', 'Teacher', '', 0),
+(198, 'Leoniel', 'almendras123', 'Almendras, Leoniel H.', '0', '', '', 'Teacher', '', 0),
+(203, 'Romeo', 'aldenese654', 'Aldenese, Romeo P.', '0', '', '', 'Teacher', '', 0),
+(207, 'Jinky', 'aliasot456', 'Aliasot, Jinky L.', '0', '', '', 'Teacher', '', 0),
+(215, 'Junry', 'monterola987', 'Monterola, Junry T.', '0', '', '', 'Teacher', '', 0),
+(221, 'Carlo', 'singson789', 'Singson, Carlo N.', '0', '', '', 'Teacher', '', 0),
+(231, 'Emmanuel', 'paradiang753', 'Paradiang, Emmanuel T.', '0', '', '', 'Teacher', '', 0),
+(239, 'Felix', 'paradiang357', 'Paradiang, Felix', '0', '', '', 'Teacher', '', 0),
+(242, 'Joseph1', 'racaza951', 'Racaza, Joseph', '0', '', '', 'Teacher', '', 0),
+(290, 'Jose', 'juntilla159', 'Juntilla, Jose Leo', '0', '', '', 'Teacher', '', 30063),
+(291, 'Joelmar', 'enriquez147', 'Enriquez, Joelmar', '0', '', '', 'Teacher', '', 0),
+(294, 'Jenivie', 'ormoc741', 'Ormoc, Jenivie H.', '0', '', '', 'Teacher', '', 0),
+(298, 'Chito', 'luang258', 'Luang, Chito', '0', '', '', 'Teacher', '', 0),
+(300, 'Glenard', 'sarmiento852', 'Sarmiento, Glenard D.', '0', '', '', 'Teacher', '', 0),
+(301, 'Maria', 'rio369', 'Rio, Maria Ni? Jesusa F.', '0', '', '', 'Teacher', '', 0),
+(308, 'Ker', 'rodriguez963', 'Rodriguez, Ker Jay R.', '0', '', '', 'Teacher', '', 0),
+(310, 'Joseph2', 'castro159', 'Castro, Joseph Rey T.', '0', '', '', 'Teacher', '', 0),
+(313, 'Aillen', 'abelita951', 'Abelita, Aillen Joyce D.', '0', '', '', 'Teacher', '', 0),
+(317, 'Christian', 'manipis357', 'Manipis, Christian M.', '0', '', '', 'Teacher', '', 0),
+(319, 'Annalyn', 'rosell753', 'Rosell, Annalyn P.', '0', '', '', 'Teacher', '', 0),
+(353, 'Catherine', 'terana45', 'Terana, Catherine C.', '0', '', '', 'Teacher', '', 0),
+(354, 'John', 'juntilla56', 'Juntilla, John Neil A.', '0', '', '', 'Teacher', '', 0),
+(372, 'Adonis', 'rivera564', 'Rivera, Adonis', '0', '', '', 'Teacher', '', 0),
+(374, 'June', 'sinadhan213', 'Sinadhan, June Thomas Q.', '0', '', '', 'Teacher', '', 0),
+(382, 'Mary', 'cataraja2', 'Cataraja, Mary Grace D.', '0', '', '', 'Teacher', '', 0),
+(390, 'Ivene', 'laude789', 'Laude, Ivene C.', '0', '', '', 'Teacher', '', 0),
+(391, 'Edrian', 'robuca879', 'Robuca, Edrian M.', '0', '', '', 'Teacher', '', 0),
+(392, 'Kris', 'hermosilla89', 'Hermosilla, Alvin Kris B.', '0', '', '', 'Teacher', '', 0),
+(393, 'Vince', 'roa23', 'Roa, Vince Daniel', '0', '', '', 'Teacher', '', 0),
+(394, 'Jenier', 'tamundoc456', 'Tamundoc, Jenier T.', '0', '', '', 'Teacher', '', 0),
+(397, 'Richelle', 'uayan879', 'Uayan, Richelle Ann', '0', '', '', 'Teacher', '', 0),
+(410, 'Gil', 'gocon231', 'Goc-ong, Mark Gil C.', '0', '', '', 'Teacher', '', 0),
+(412, 'Hazel', 'lopez897', 'Lopez, Hazel T.', '0', '', '', 'Teacher', '', 0),
+(414, 'Marilyn', 'meca546', 'Meca, Marilyn D.', '0', '', '', 'Teacher', '', 0),
+(422, 'Dax', 'bariaan879', 'Bariaan, Michaed Dax G.', '0', '', '', 'Teacher', '', 0),
+(430, 'Ademar', 'salvia615', 'Salvia Jr., Ademar B.', '0', '', '', 'Teacher', '', 0),
+(447, 'Dianne', 'pongautan123', 'Pongautan, Dianne', '0', '', '', 'Teacher', '', 0),
+(458, 'Sergiane', 'dua789', 'Dua, Sergiane H.', '0', '', '', 'Teacher', '', 0),
+(460, 'Jeb', 'osabe0', 'Osabel, Mark Jeb B.', '0', '', '', 'Teacher', '', 0),
+(461, 'Jover', 'capuyan534', 'Capuyan, Jover Isoto', '0', '', '', 'Teacher', '', 0),
+(462, 'Kenneth', 'wen789', 'Wen, Kenneth', '0', '', '', 'Teacher', '', 0),
+(473, 'Raffy', 'rosal564', 'Rosal, Raffy', '0', '', '', 'Teacher', '', 0),
+(474, 'Angelo', 'castro879', 'Castro, Angelo', '0', '', '', 'Teacher', '', 0),
+(475, 'Marvin', 'castro546', 'Castro, Marvin', '0', '', '', 'Teacher', '', 0),
+(476, 'Elmery', 'papas231', 'Papas, Elmery Ry', '0', '', '', 'Teacher', '', 0),
+(478, 'Lou', 'batulan5646', 'Batulan, Mary Lou', '0', '', '', 'Teacher', '', 0),
+(479, 'Jill', 'capin231', 'Capin, Mary Jill', '0', '', '', 'Teacher', '', 0),
+(480, 'Rhea', 'cabatingan45', 'Cabatingan, Rhea', '0', '', '', 'Teacher', '', 0),
+(481, 'Jerome', 'quirante213', 'Quirante, Jerome', '0', '', '', 'Teacher', '', 0),
+(482, 'Wilfredo', 'delacerna231', 'Dela Cerna, Wilfredo', '0', '', '', 'Teacher', '', 0),
+(483, 'Grace', 'frigillana897', 'Frigillana, Mary Grace', '0', '', '', 'Teacher', '', 0),
+(485, 'Akari', 'pesta?s0241', 'Pesta?s, Akari', '0', '', '', 'Teacher', '', 0),
+(486, 'Alexander', 'casas897', 'Casas, Alexander', '0', '', '', 'Teacher', '', 0),
+(487, 'Naome', 'panta546', 'Panta, Naome', '0', '', '', 'Teacher', '', 0),
+(488, 'Marianito', 'montebon231', 'Montebon, Marianito', '0', '', '', 'Teacher', '', 0),
+(489, 'Therese', 'casas231', 'Casas, Mary Therese', '0', '', '', 'Teacher', '', 0),
+(490, 'Angelie', 'luardo5466', 'Luardo, Angelie', '0', '', '', 'Teacher', '', 0),
+(491, 'Lester', 'alcoseba879', 'Alcoseba, Lester', '0', '', '', 'Teacher', '', 0),
+(492, 'Rosita', 'gargantiel231', 'Gargantiel, Rosita', '0', '', '', 'Teacher', '', 0),
+(493, 'Arne', 'morales564', 'Morales, Arne Josephus', '0', '', '', 'Teacher', '', 0),
+(494, 'Ariel', 'durias879', 'Durias, Ariel', '0', '', '', 'Teacher', '', 0),
+(496, 'Chere', 'velasquez321', 'Velasquez, Chere', '0', '', '', 'Teacher', '', 0),
+(497, 'Chizza', 'barriga564', 'Barriga, Chizza Mei', '0', '', '', 'Teacher', '', 0),
+(498, 'Jeza', 'malubay789', 'Malubay, Jeza', '0', '', '', 'Teacher', '', 0),
+(500, 'Jean', 'guzon159', 'Guzon, Jean Grace', '0', '', '', 'Teacher', '', 0),
+(506, 'Kayze', 'capoy3', 'Capoy, Kayze Lyn', '0', '', '', 'Teacher', '', 0),
+(507, 'Conception', 'valiente174', 'Valiente, Conception M.', '0', '', '', 'Teacher', '', 0),
+(508, 'Rajanah', 'gorre285', 'Gorre, Ranajah Carmel M.', '0', '', '', 'Teacher', '', 0),
+(509, 'Jeremias', 'giangan9633', 'Giangan, Jeremias', '0', '', '', 'Teacher', '', 0),
+(510, 'Jhune', 'bataluna213', 'Bataluna, Jhune Clear B.', '0', '', '', 'Teacher', '', 0),
+(511, 'Robert', 'gonzales546', 'Gonzales, Robert B.', '0', '', '', 'Teacher', '', 0),
+(512, 'Jela', 'vasquez897', 'Vasquez, Jela H.', '0', '', '', '', '', 0),
+(999, 'abma77', 'abuloc060302', 'Argie Benedict Abuloc', '0', '', '', 'Admin', 'Consolacion', 0),
+(1002, 'Marites', 'bejoc5', 'Bejoc, Marites B.', '0', '', '', 'Teacher', '', 0),
+(1041, 'carlosmiguel123', 'carlosmiguel123', 'Bermejo, Carlos Miguel', '0', 'carlosmiguel.bermejo@ctu.edu.ph', '23', 'Admin', '', 0),
+(1047, 'argie12345', 'abuloc060302', 'Abuloc, Argie Benedict Mirafuentes', '09054583393', 'argiebenedict.abuloc@ctu.edu.ph', '', 'Student', 'Liloan', 0),
+(1050, 'argie_teacher123', 'abuloc060302', 'Abuloc, Argie Benedict', '098465416523', '', '', 'Teacher', 'Tilhaong', 52643123);
 
 --
 -- Indexes for dumped tables
@@ -8551,7 +8574,7 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=367609;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=367613;
 
 --
 -- AUTO_INCREMENT for table `school_a_y`
@@ -8569,13 +8592,13 @@ ALTER TABLE `section`
 -- AUTO_INCREMENT for table `section_detail`
 --
 ALTER TABLE `section_detail`
-  MODIFY `section_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `section_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -8587,25 +8610,25 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `subject_detail`
 --
 ALTER TABLE `subject_detail`
-  MODIFY `subject_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13028;
+  MODIFY `subject_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13033;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=542;
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
 
 --
 -- AUTO_INCREMENT for table `teacher_detail`
 --
 ALTER TABLE `teacher_detail`
-  MODIFY `teacher_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12376;
+  MODIFY `teacher_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12382;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1048;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1051;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

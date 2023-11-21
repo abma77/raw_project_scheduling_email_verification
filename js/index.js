@@ -2295,21 +2295,38 @@ $(document).ready(function () {
         const start_time_minute = formData.get("schedule_start_time_minute");
         const end_time_hour = formData.get("schedule_end_time_hour");
         const end_time_minute = formData.get("schedule_end_time_minute");
-
+        const semester = $("#select-semester").val();
+        const school_year = $("#select-ay").val();
+        const section = $("#select-section-timetable").val();
+        const teacher = $('#select-teacher-timetable').val();
         $.ajax({
             type: "POST",
             url: "../data/data.update_schedule.php",
             data: {
-                room: room,
-                week_day: week_day,
-                start_time_hour: start_time_hour,
-                start_time_minute: start_time_minute,
-                end_time_hour: end_time_hour,
-                end_time_minute: end_time_minute,
+                plot_room: room,
+                plot_semester:semester,
+                plot_school_year: school_year,
+                plot_section: section,
+                plot_teacher: teacher,
+                plot_week_day: week_day,
+                plot_start_time_hour: start_time_hour,
+                plot_start_time_minute: start_time_minute,
+                plot_end_time_hour: end_time_hour,
+                plot_end_time_minute: end_time_minute,
                 submit: "submit"
             },
             success: function (response) {
+                if (response == 1) {
+                    $("#alert-messages").html(trigger_toast_message("Schedule successfully updated.", __icon.success_icon, "bg-success", "text-white"));
+                    trigger_toast("trigger-toast");
+                } else {
+                    $("#alert-messages").html(trigger_toast_message("Unable to update schedule.", __icon.erro_icon, "bg-danger", "text-white"));
+                    trigger_toast("trigger-toast");
+                }
 
+                section_timetable(__semester, __school_year, __section);
+                teacher_timetable(__semester, __school_year, __teacher);
+                room_timetable(__semester, __school_year, __room);
             }
         })
     });

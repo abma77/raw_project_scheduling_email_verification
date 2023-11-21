@@ -26,7 +26,7 @@ if (isset($_GET['verification'])) {
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="./css/trial.css">
+    <link rel="stylesheet" href="./css/trial_index.css">
     <title>Login Page </title>
 </head>
 

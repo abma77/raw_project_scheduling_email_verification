@@ -54,7 +54,7 @@ if (isset($_POST["submit"])) {
             echo "username_same_error";
         } else if (preg_match('/^[a-zA-Z]+$/', $_POST["username"])) {
             echo "username_error";
-        } else if (preg_match('/^[a-zA-Z]+$/', $_POST["password"]) && strlen(trim($_POST["password"])) < 8) {
+        } else if (preg_match('/^[a-zA-Z]+$/', $_POST["password"]) || strlen(trim($_POST["password"])) < 8) {
             echo "password_error";
         } else if (strlen(trim($_POST["ctuid"])) < 5) {
             echo "CTU_ID_error";
@@ -99,7 +99,7 @@ if (isset($_POST["submit"])) {
                 //Content
                 $mail->isHTML(true); //Set email format to HTML
                 $mail->Subject = 'no reply';
-                $mail->Body = 'Here is the verification link <b><a href="http://localhost/raw_project_scheduling_email_verification/login_page.php?verification=' . $code . '">http://localhost/raw_project_scheduling_email_verification/login_page.php?verification=' . $code . '</a></b>';
+                $mail->Body = 'Here is the verification link <b><a href="http://localhost/raw_project_scheduling_email_verification/index.php?verification=' . $code . '">http://localhost/raw_project_scheduling_email_verification/login_page.php?verification=' . $code . '</a></b>';
 
                 $mail->send();
                 // echo 'Message has been sent';

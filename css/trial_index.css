@@ -152,8 +152,8 @@ h1 {
 
 .password-toggle .toggle-icon {
     position: absolute;
-    top: 50%;
-    right: 5%;
+    top: 53.50%;
+    right: 20%;
     transform: translateY(-50%);
     cursor: pointer;
 }

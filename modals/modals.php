@@ -422,7 +422,7 @@
             </div>
             <div class="modal-body">
                 <div class="my-2">
-                    <h4>Update Schedule</h4>
+                    <h4>Delete Schedule</h4>
                 </div>
                 <hr>
                 <div class="my-2" id="update-schedule"></div>

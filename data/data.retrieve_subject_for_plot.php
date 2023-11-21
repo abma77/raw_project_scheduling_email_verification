@@ -6,7 +6,7 @@
         if(!empty($_POST["submit"])){
 
             $retrieve_subject_for_plot = $conn->prepare("
-                SELECT *
+                SELECT DISTINCT subject_detail_subject_id, subject_title, subject_name
                 FROM subject_detail
                 LEFT JOIN subject
                 ON subject.subject_id = subject_detail.subject_detail_subject_id

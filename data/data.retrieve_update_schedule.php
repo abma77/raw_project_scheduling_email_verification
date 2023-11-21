@@ -220,9 +220,9 @@
                             </div>
                         </div>
                         <div class="my-3 row">
-                            <div class="col-6 d-grid">
+                            <!-- <div class="col-6 d-grid">
                                 <button type="submit" class="btn btn-primary rounded-0 shadow-none">Update</button>
-                            </div>
+                            </div> -->
                             <div class="col-6 d-grid">
                                 <button type="button" class="btn btn-danger rounded-0 shadow-none" id="delete-schedule" data-id="<?=$_POST["schedule_id"] ?>">Delete</button>
                             </div>

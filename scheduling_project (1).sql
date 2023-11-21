@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 06:56 AM
+-- Generation Time: Nov 21, 2023 at 04:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -6506,9 +6506,7 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (`student_id`, `student_id_number`, `student_firstname`, `student_middlename`, `student_lastname`, `student_fullname`, `student_course`, `student_year`, `student_section`, `student_status`) VALUES
 (3, 3200189, 'PoKieMane', '', 'Magsaysay', 'Pokiemane Magsaysay', 'BSIT', '4', 'BSIT 4A N-23', 'Regular'),
-(13, 114312, 'juan', 'jhgjkgkjh', 'gjkjlhl', '', 'BSIT', '4', 'BSIT 4A - Night', 'Regular'),
-(18, 3200739, 'Argie Benedict', 'Mirafuentes', 'Abuloc', 'Abuloc, Argie Benedict Mirafuentes', 'BSIT', '4', 'BSIT 4A N-23', 'Regular'),
-(19, 300012, 'Sage', 'Leah Todd', 'Alexander', 'Alexander, Sage', 'BIT', '4', 'BSIT 4A N-23', 'Regular');
+(23, 2313123, 'Argie Benedict', 'Mirafuentes', 'Abuloc', 'Abuloc, Argie Benedict Mirafuentes', 'BSIT', '4', 'BSIT 4A N-23', 'Regular');
 
 -- --------------------------------------------------------
 
@@ -7680,8 +7678,7 @@ INSERT INTO `teacher` (`teacher_id`, `teacher_id_number`, `teacher_lastname`, `t
 (509, 30783, 'Giangan', 'Jeremias', '', 'Giangan, Jeremias ', 'BSED', 'M. Ed. Sped', 'Dev. Ed. D.', '', '', '', '', '', '', '', '', ''),
 (510, 30748, 'Bataluna', 'Jhune Clear', 'B', 'Bataluna, Jhune Clear B', 'MSIT (Ongoing)', '', '', '', '', '', '', '', '', '', '', ''),
 (511, 30785, 'Gonzales', 'Robert', 'B', 'Gonzales, Robert B', 'BSIT', 'MSIT (Ongoing)', '', '', 'Electronics', '', '', 'Part-time', '', '', '', ''),
-(512, 30926, 'Vasquez', 'Jela Marivy', 'H', 'Vasquez, Jela Marivy H', 'BSED', '', '', '', 'Science', '', '', 'Part-time', '', '', '', ''),
-(542, 52643123, 'Abuloc', 'Argie Benedict', 'Mirafuentes', '', 'Bachelor of Science in Information Technology', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'Organic', 'N/A', 'N/A', 'N/A', 'N/A');
+(512, 30926, 'Vasquez', 'Jela Marivy', 'H', 'Vasquez, Jela Marivy H', 'BSED', '', '', '', 'Science', '', '', 'Part-time', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -8339,7 +8336,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_username`, `user_password`, `user_fullname`, `user_contact`, `user_email`, `user_email_verified`, `user_type`, `user_address`, `user_id_number`) VALUES
-(1, 'Arnold', 'batac12345', 'Batac, Arnold N.', '905456465', '', '', 'Teacher', 'Danao City', 0),
+(1, 'Arnold', 'batac12345', 'Batac, Arnold N.', '0905456465', '', '', 'Teacher', 'Danao City', 0),
 (3, 'PoKieMane', 'student123', 'PokieMane Magsaysay', '984654156', '', '', 'Student', 'Tilhaong', 3200189),
 (12, 'Frashel', 'pepito456', 'Pepito, Frashel Clark A.', '0', '', '', 'Teacher', '', 9),
 (17, 'Joel', 'durante789', 'Durante, Joel A.', '0', '', '', 'Teacher', '', 14),
@@ -8448,11 +8445,9 @@ INSERT INTO `users` (`user_id`, `user_username`, `user_password`, `user_fullname
 (510, 'Jhune', 'bataluna213', 'Bataluna, Jhune Clear B.', '0', '', '', 'Teacher', '', 0),
 (511, 'Robert', 'gonzales546', 'Gonzales, Robert B.', '0', '', '', 'Teacher', '', 0),
 (512, 'Jela', 'vasquez897', 'Vasquez, Jela H.', '0', '', '', '', '', 0),
-(999, 'abma77', 'abuloc060302', 'Argie Benedict Abuloc', '0', '', '', 'Admin', 'Consolacion', 0),
 (1002, 'Marites', 'bejoc5', 'Bejoc, Marites B.', '0', '', '', 'Teacher', '', 0),
-(1041, 'carlosmiguel123', 'carlosmiguel123', 'Bermejo, Carlos Miguel', '0', 'carlosmiguel.bermejo@ctu.edu.ph', '23', 'Admin', '', 0),
-(1047, 'argie12345', 'abuloc060302', 'Abuloc, Argie Benedict Mirafuentes', '09054583393', 'argiebenedict.abuloc@ctu.edu.ph', '', 'Student', 'Liloan', 0),
-(1050, 'argie_teacher123', 'abuloc060302', 'Abuloc, Argie Benedict', '098465416523', '', '', 'Teacher', 'Tilhaong', 52643123);
+(1053, 'argie12', 'abuloc060302', 'Abuloc, Argie Benedict Mirafuentes', '09054583393', 'argiebenedict.abuloc@ctu.edu.ph', '', 'Student', 'Tilhaong', 0),
+(1055, 'abma77', 'abuloc060302', 'Argie Abuloc', '', '', '', 'Admin', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -8598,7 +8593,7 @@ ALTER TABLE `section_detail`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -8616,7 +8611,7 @@ ALTER TABLE `subject_detail`
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=544;
 
 --
 -- AUTO_INCREMENT for table `teacher_detail`
@@ -8628,7 +8623,7 @@ ALTER TABLE `teacher_detail`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1051;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1056;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

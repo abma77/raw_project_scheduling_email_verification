@@ -41,7 +41,7 @@
                             <div class="col-6 mt-2">
                                 <label class="form-label">ID Number</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="ID Number"
-                                    name="id_number" id="add-teacher-ctuid" required>
+                                    name="id_number" id="add-teacher-ctuid" maxlength="5" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Address</label>
@@ -51,7 +51,7 @@
                             <div class="col-6 mt-2">
                                 <label class="form-label">Phone Number</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="Phone Number"
-                                    name="phone_number" id="add-teacher-phone-number" required>
+                                    name="phone_number" id="add-teacher-phone-number" maxlength="11" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Email</label>
@@ -176,7 +176,7 @@
                             <div class="col-6 mt-2">
                                 <label class="form-label">ID Number</label>
                                 <input type="text" class="form-control rounded-0 shadow-none" placeholder="ID Number"
-                                    name="id_number" id="add-student-ctuid" required>
+                                    name="id_number" id="add-student-ctuid" maxlength="7" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Address</label>
@@ -187,7 +187,7 @@
                                 <label class="form-label">Phone Number</label>
                                 <input id="select-bachelor" type="text" class="form-control shadow-none rounded-0"
                                     placeholder="Phone Number" name="phone_number" id="add-student-phone-number"
-                                    required>
+                                    maxlength="11" required>
                             </div>
                             <div class="col-6 mt-2">
                                 <label class="form-label">Email</label>
@@ -430,4 +430,3 @@
         </div>
     </div>
 </div>
-<script src="../js/validation_admin.js"></script>

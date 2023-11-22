@@ -35,7 +35,11 @@ function get_domain($email)
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
         // $student_fullname =  legal_input($_POST["firstname"]) . " " . legal_input($_POST["middlename"]) . " " . legal_input($_POST["lastname"]);
-        $student_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"]));
+        if (empty($_POST["middlename"])) {
+            $student_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"]));
+        } else {
+            $student_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"])) . " " . strip_tags(legal_input($_POST["middlename"]));
+        }
         $random = rand(100000, 999999);
         $code = md5($random);
         //ALLOWED DOMAINS

@@ -32,7 +32,11 @@ function get_domain($email)
 }
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
-        $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"]));
+        if (empty($_POST["middlename"])) {
+            $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags((legal_input($_POST["firstname"])));
+        } else {
+            $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"])) . " " . strip_tags(legal_input($_POST["middlename"]));
+        }
         $random = rand(100000, 999999);
         $code = md5($random);
 

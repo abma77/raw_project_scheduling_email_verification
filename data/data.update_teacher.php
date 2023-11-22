@@ -41,7 +41,7 @@ function get_domain($email)
 $teacher_fullname = "";
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
-        if ($_POST["middlename"] == null) {
+        if (empty($_POST["middlename"])) {
             $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags((legal_input($_POST["firstname"])));
         } else {
             $teacher_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"])) . " " . strip_tags(legal_input($_POST["middlename"]));

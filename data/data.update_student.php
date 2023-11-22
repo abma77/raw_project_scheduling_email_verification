@@ -44,7 +44,7 @@ $student_fullname = "";
 if (isset($_POST["submit"])) {
     if (!empty($_POST["submit"])) {
         $student_id_number_final = "";
-        if ($_POST["middlename"] == null) {
+        if (empty($_POST["middlename"])) {
             $student_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"]));
         } else {
             $student_fullname = strip_tags(legal_input($_POST["lastname"])) . ", " . strip_tags(legal_input($_POST["firstname"])) . " " . strip_tags(legal_input($_POST["middlename"]));

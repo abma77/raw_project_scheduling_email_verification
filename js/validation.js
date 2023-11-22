@@ -38,7 +38,7 @@ setInputFilter(document.getElementById("register-student-last-name"), function (
     return /^[A-Za-zÑñ ]*$/i.test(value);
 }, "Letters Hyphen(Dash) and Period Only");
 setInputFilter(document.getElementById("register-student-middle-name"), function (value) {
-    return /^[A-Za-zÑñ ]*$/i.test(value);
+    return /^[A-Za-zÑñ. ]*$/i.test(value);
 }, "Letters Hyphen(Dash) and Period Only");
 setInputFilter(document.getElementById("register-student-email"), function (value) {
     return /^[A-Za-zÑñ0-9_.-@]*$/i.test(value);

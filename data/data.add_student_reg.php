@@ -101,7 +101,7 @@ if (isset($_POST["submit"])) {
                 //Content
                 $mail->isHTML(true); //Set email format to HTML
                 $mail->Subject = 'no reply';
-                $mail->Body = 'Here is the verification link <b><a href="http://localhost/raw_project_scheduling_email_verification/index.php?verification=' . $code . '">http://localhost/raw_project_scheduling_email_verification/login_page.php?verification=' . $code . '</a></b>';
+                $mail->Body = 'Here is the verification link <b><a href="http://ctusched.live/raw_project_scheduling_email_verification/index.php?verification=' . $code . '">http://localhost/raw_project_scheduling_email_verification/login_page.php?verification=' . $code . '</a></b>';
 
                 $mail->send();
                 // echo 'Message has been sent';
